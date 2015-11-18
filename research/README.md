@@ -4,8 +4,9 @@ Resources and Info
 ----
 ## Actual human needs
 
-### Maslow's Hierarchy of Needs
 ![Maslow's Pyramid](https://media.licdn.com/mpr/mpr/shrinknp_800_800/p/3/005/0ab/1d1/0bddb88.jpg)
+
+![Sleep](https://sleepfoundation.org/sites/default/files/SleepTimeRecommendations012615%5B1%5D-page-001_0.jpg)
 
 ----
 ## Goal setting and tracking
