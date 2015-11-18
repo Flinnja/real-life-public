@@ -6,25 +6,18 @@ Resources and Info
 
 ![Maslow's Pyramid](https://media.licdn.com/mpr/mpr/shrinknp_800_800/p/3/005/0ab/1d1/0bddb88.jpg)
 
-*Sleep
+* Sleep
 Adults (26-64yo) generally need 7-9 hours sleep, minimum 6, max 10
 https://sleepfoundation.org/sites/default/files/SleepTimeRecommendations012615%5B1%5D-page-001_0.jpg
-
-*Water
+* Water
 Most say eight-ish glasses of water per day (or equivalent)
-
-*Food
+* Food
 Varies hugely, no consensus
-
-*Exercise
-
-*Social/Connection
-
-*Projects/Hobbies/Working towards goals
-
-*Community/Belonging
-
-*Gratitude
+* Exercise
+* Social/Connection
+* Projects/Hobbies/Working towards goals
+* Community/Belonging
+* Gratitude
 
 ----
 ## Goal setting and tracking
