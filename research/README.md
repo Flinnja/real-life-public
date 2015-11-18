@@ -12,6 +12,10 @@ Resources and Info
 ## Goal setting and tracking
 
 
+Goal setting exercise - http://www.lifehack.org/articles/productivity/one-the-best-goal-setting-exercises.html
+Long term goals - http://www.huffingtonpost.com/elizabeth-rider/the-best-goal-setting-adv_b_6343496.html
+5 rules for goal setting - https://www.mindtools.com/pages/article/newHTE_90.htm
+Measuring progress - https://blog.bufferapp.com/how-to-measure-progress-in-your-personal-goals-daily-weekly-and-monthly
 ----
 ## Similar Products
 
