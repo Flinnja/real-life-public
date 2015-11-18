@@ -14,6 +14,8 @@ Resources and Info
 ----
 ## Similar Products
 https://itunes.apple.com/us/app/lifesum-healthier-living-better/id286906691?mt=8 *UI ideas
+https://itunes.apple.com/en/app/way-life-ultimate-habit-maker/id393159800?mt=8 *UI ideas
+http://www.azumio.com/s/argus/index.html *UI ideas
 
 ----
 ## Avatar
