@@ -13,7 +13,7 @@ Resources and Info
 
 ----
 ## Similar Products
-https://itunes.apple.com/us/app/lifesum-healthier-living-better/id286906691?mt=8 
+https://itunes.apple.com/us/app/lifesum-healthier-living-better/id286906691?mt=8 *UI ideas
 
 ----
 ## Avatar
