@@ -15,6 +15,15 @@ Resources and Info
 ## Similar Products
 
 
+Top 3 health tracker apps on Google Play:
+Google Fit
+Health-Tracker
+S Health-Fitness Diet Tracker
+
+These apps are all specific in what they track, e.g. blood cholesterol, heart
+rate, blood pressure.
+
+
 ----
 ## Avatar
 
