@@ -1,2 +1,0 @@
-class HabitController < ApplicationController
-end
