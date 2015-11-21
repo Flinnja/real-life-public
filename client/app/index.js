@@ -1,5 +1,3 @@
-let Calendar = require('react-calendar-component')
-let moment = require('moment')
 window.HabitView = require('./components/habit_view')
 window.ReactDOM = require('react-dom')
 window.React = require('react')
