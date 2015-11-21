@@ -19,4 +19,12 @@ RSpec.describe User, type: :model do
       expect{User.new(@inv_attrs).save}.to_not change{User.count}
     end
   end
+
+  describe "Validations" do
+    it "validates user name length" do
+      @attrs = FactoryGirl.attributes_for(:user, :valid)
+      @attrs[:name] = ''
+      expect(User.new(@attrs)).to_not be_valid
+    end
+  end
 end
