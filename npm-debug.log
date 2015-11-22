@@ -5,18 +5,23 @@
 1 verbose cli   'webpack-rails' ]
 2 info using npm@3.3.6
 3 info using node@v5.0.0
-4 verbose stack Error: ENOENT: no such file or directory, open '/Users/sarah/Dev/Workspace/ruru/real-life/package.json'
-4 verbose stack     at Error (native)
+4 verbose stack Error: missing script: webpack-rails
+4 verbose stack     at run (/usr/local/lib/node_modules/npm/lib/run-script.js:148:19)
+4 verbose stack     at /usr/local/lib/node_modules/npm/lib/run-script.js:58:5
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
+4 verbose stack     at checkBinReferences_ (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
+4 verbose stack     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
+4 verbose stack     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:232:12
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:76:16
+4 verbose stack     at tryToString (fs.js:414:3)
+4 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:401:12)
 5 verbose cwd /Users/sarah/Dev/Workspace/ruru/real-life
 6 error Darwin 15.0.0
 7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "webpack-rails"
 8 error node v5.0.0
 9 error npm  v3.3.6
-10 error path /Users/sarah/Dev/Workspace/ruru/real-life/package.json
-11 error code ENOENT
-12 error errno -2
-13 error syscall open
-14 error enoent ENOENT: no such file or directory, open '/Users/sarah/Dev/Workspace/ruru/real-life/package.json'
-14 error enoent This is most likely not a problem with npm itself
-14 error enoent and is related to npm not being able to find a file.
-15 verbose exit [ -2, true ]
+10 error missing script: webpack-rails
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
