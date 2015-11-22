@@ -1,6 +1,10 @@
 import React from 'react'
 
 var HabitButton = require('./habit_button')
+var HabitNavHome = require('./habit_nav_home')
+var HabitCanvas = require('./habit_canvas')
+var HabitNavNeeds = require('./habit_nav_needs')
+
 
 var HabitView = React.createClass({
 
@@ -18,6 +22,9 @@ var HabitView = React.createClass({
       <div onClick={this.clickHandler}>
         {this.state.name}
         <HabitButton />
+        <HabitNavHome />
+        <HabitCanvas />
+        <HabitNavNeeds />
         <div>
           { this.state.showImg ? img : null}
         </div>
