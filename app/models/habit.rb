@@ -11,6 +11,9 @@ class Habit < ActiveRecord::Base
   def check_schedule
     if(self.next_date == Date.today)
       self.next_date += frequency
+      return true
+    else
+      return false
     end
   end
 
