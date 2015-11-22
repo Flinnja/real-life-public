@@ -61,7 +61,7 @@ RSpec.describe Habit, type: :model do
       before(:all) do
         @attrs = FactoryGirl.attributes_for(:habit,:valid)
         @attrs[:start_date] = Date.today
-        @attrs[:frequency] = "daily"
+        @attrs[:frequency] = 1
         @habit = Habit.create(@attrs)
       end
       it "correctly increments next_date" do
@@ -73,7 +73,7 @@ RSpec.describe Habit, type: :model do
       before(:all) do
         @attrs = FactoryGirl.attributes_for(:habit,:valid)
         @attrs[:start_date] = Date.today+1
-        @attrs[:frequency] = "daily"
+        @attrs[:frequency] = 1
         @habit = Habit.create(@attrs)
       end
       it "doesn't change next_date" do
