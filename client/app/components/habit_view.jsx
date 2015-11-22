@@ -1,23 +1,40 @@
-import React, { Component } from 'react'
-// var TeX = require('../../react-components/js/tex.jsx')
+import React from 'react'
+
 var PopUp = require('./popUp')
 
-class HabitView extends Component {
+var HabitView = React.createClass({
 
-  constructor(props) {
-    super(props)
-  }
+  getInitialState: function () {
+    return {
+      name: 'Simon',
+      showImg: false
+    }
+  },
 
+  render: function () {
+    var img = (<img src={this.props.image} />)
 
-  render(){
     return(
-      <div>
-        <PopUp />
-        <PopUp />
-        <PopUp />
-        <PopUp />
+      <div onClick={this.clickHandler}>
+        {this.state.name}
+        <div>
+          { this.state.showImg ? img : null}
+        </div>
       </div>
     )
+  },
+
+  clickHandler: function () {
+    // var newState;
+
+    // if (this.state.showImg === true) {
+    //   newState = false
+    // } else {
+    //   newState = true
+    // }
+
+
+    this.setState({ showImg: !this.state.showImg })
   }
 
 // React.render(<ButtonWithDialog />, domNode)
@@ -40,6 +57,6 @@ class HabitView extends Component {
   //   )
   // }
 
-}
+})
 
 module.exports = HabitView
