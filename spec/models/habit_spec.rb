@@ -45,4 +45,47 @@ RSpec.describe Habit, type: :model do
       expect(Habit.new(@attrs)).to_not be_valid
     end
   end
+
+  describe "Next_date" do
+    before(:all) do
+      @attrs = FactoryGirl.attributes_for(:habit,:valid)
+      @habit = Habit.create(@attrs)
+    end
+    it "is set to start_date when habit is created" do
+      expect(@habit.next_date).to eq(@habit.start_date)
+    end
+  end
+
+  describe "Check_schedule" do
+    describe "when next_date is today" do
+      before(:all) do
+        @attrs = FactoryGirl.attributes_for(:habit,:valid)
+        @attrs[:frequency] = 1
+        @habit = Habit.create(@attrs)
+      end
+      before(:each) do
+        @habit.next_date = Date.today
+      end
+      it "correctly increments next_date" do
+        expect{@habit.check_schedule}.to change{@habit.next_date}.by(1)
+      end
+      it "returns true" do
+        expect(@habit.check_schedule).to eq(true)
+      end
+    end
+    describe "when next_date is not today" do
+      before(:all) do
+        @attrs = FactoryGirl.attributes_for(:habit,:valid)
+        @attrs[:frequency] = 1
+        @habit = Habit.create(@attrs)
+        @habit.next_date = Date.today+1
+      end
+      it "doesn't change next_date" do
+        expect{@habit.check_schedule}.to_not change{@habit.next_date}
+      end
+      it "returns true" do
+        expect(@habit.check_schedule).to eq(false)
+      end
+    end
+  end
 end
