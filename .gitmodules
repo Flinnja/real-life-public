@@ -1,0 +1,3 @@
+[submodule "client/react-components"]
+	path = client/react-components
+	url = https://github.com/Khan/react-components.git

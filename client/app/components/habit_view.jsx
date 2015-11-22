@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-// require('./habit_view.css')
+// var TeX = require('../../react-components/js/tex.jsx')
+var PopUp = require('./popUp')
 
 class HabitView extends Component {
 
@@ -8,14 +8,38 @@ class HabitView extends Component {
     super(props)
   }
 
-  render() {
-    return (
-      <div className='test'>
-        <p>Hello Simon</p>
 
+  render(){
+    return(
+      <div>
+        <PopUp />
+        <PopUp />
+        <PopUp />
+        <PopUp />
       </div>
     )
   }
+
+// React.render(<ButtonWithDialog />, domNode)
+
+// require('./habit_view.css')
+
+  // render() {
+  //   return (
+  //     <popUp>
+  //       <ButtonWithDialog />
+  //     </popUp>
+  //   )
+  // }
+
+  // render() {
+  //   return (
+  //     <div className='test'>
+  //       <p>Hello Sulu</p>
+  //     </div>
+  //   )
+  // }
+
 }
 
 module.exports = HabitView
