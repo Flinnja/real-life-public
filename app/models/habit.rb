@@ -16,7 +16,7 @@ class Habit < ActiveRecord::Base
 
   def init
     self.next_date = self.start_date
-    # self.check_schedule
+    self.check_schedule
   end
 
   def start_date_cannot_be_in_the_past

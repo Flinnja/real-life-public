@@ -60,9 +60,9 @@ RSpec.describe Habit, type: :model do
     describe "when next_date is today" do
       before(:all) do
         @attrs = FactoryGirl.attributes_for(:habit,:valid)
-        @attrs[:start_date] = Date.today
         @attrs[:frequency] = 1
         @habit = Habit.create(@attrs)
+        @habit.next_date = Date.today
       end
       it "correctly increments next_date" do
         expect{@habit.check_schedule}.to change{@habit.next_date}.by(1)
@@ -72,9 +72,9 @@ RSpec.describe Habit, type: :model do
     describe "when next_date is not today" do
       before(:all) do
         @attrs = FactoryGirl.attributes_for(:habit,:valid)
-        @attrs[:start_date] = Date.today+1
         @attrs[:frequency] = 1
         @habit = Habit.create(@attrs)
+        @habit.next_date = Date.today+1
       end
       it "doesn't change next_date" do
         expect{@habit.check_schedule}.to_not change{@habit.next_date}
