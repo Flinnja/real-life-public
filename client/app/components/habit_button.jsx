@@ -4,7 +4,7 @@ var LayeredComponentMixin = require('../../react-components/js/layered-component
 var Modal = require('../../react-components/modal.js')
 
 
-var PopUp = React.createClass({
+var HabitButton = React.createClass({
   mixins: [LayeredComponentMixin],
 
   getInitialState: function() {
@@ -44,4 +44,4 @@ handleClick: function() {
   // }}}
 });
 
-module.exports = PopUp
+module.exports = HabitButton

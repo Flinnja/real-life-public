@@ -1,6 +1,6 @@
 import React from 'react'
 
-var PopUp = require('./popUp')
+var HabitButton = require('./habit_button')
 
 var HabitView = React.createClass({
 
@@ -17,7 +17,7 @@ var HabitView = React.createClass({
     return(
       <div onClick={this.clickHandler}>
         {this.state.name}
-        <PopUp />
+        <HabitButton />
         <div>
           { this.state.showImg ? img : null}
         </div>
