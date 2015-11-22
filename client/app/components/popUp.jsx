@@ -1,4 +1,5 @@
 import React from 'react'
+
 var LayeredComponentMixin = require('../../react-components/js/layered-component-mixin.jsx')
 var Modal = require('../../react-components/modal.js')
 

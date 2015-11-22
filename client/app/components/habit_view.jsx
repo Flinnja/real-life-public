@@ -17,6 +17,7 @@ var HabitView = React.createClass({
     return(
       <div onClick={this.clickHandler}>
         {this.state.name}
+        <PopUp />
         <div>
           { this.state.showImg ? img : null}
         </div>
@@ -25,38 +26,23 @@ var HabitView = React.createClass({
   },
 
   clickHandler: function () {
-    // var newState;
-
-    // if (this.state.showImg === true) {
-    //   newState = false
-    // } else {
-    //   newState = true
-    // }
-
-
     this.setState({ showImg: !this.state.showImg })
   }
 
-// React.render(<ButtonWithDialog />, domNode)
+//   getInitialState: function () {
+//     return {
+//       true
+//     }
+//   },
 
-// require('./habit_view.css')
-
-  // render() {
-  //   return (
-  //     <popUp>
-  //       <ButtonWithDialog />
-  //     </popUp>
-  //   )
-  // }
-
-  // render() {
-  //   return (
-  //     <div className='test'>
-  //       <p>Hello Sulu</p>
-  //     </div>
-  //   )
-  // }
-
+//   render: function(){
+//     return (
+//       <div>
+//         <p>Hello</p>
+//         <PopUp />
+//       </div>
+//     )
+//   }
 })
 
 module.exports = HabitView
