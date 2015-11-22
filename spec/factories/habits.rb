@@ -5,7 +5,7 @@ FactoryGirl.define do
       description "Run every day to get better at running"
       start_date "01-12-2016"
       end_date "31-12-2016"
-      frequency "Daily"
+      frequency 1
       user_id 1
     end
     trait :invalid do
@@ -13,7 +13,7 @@ FactoryGirl.define do
       description ""
       start_date ""
       end_date ""
-      frequency "bananas"
+      frequency ''
       user_id 1
     end
   end
