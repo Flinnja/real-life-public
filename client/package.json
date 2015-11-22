@@ -1,7 +1,6 @@
 {
   "name": "real-life-react",
   "version": "1.0.0",
-  "description": "",
   "main": "app/index.js",
   "author": "",
   "license": "ISC",
@@ -59,5 +58,6 @@
     "vim-spec": "npm run lint $TEST && npm run spec $TEST",
     "lint": "snazzy",
     "shrinkwrap": "npm-shrinkwrap"
-  }
+  },
+  "description": ""
 }
