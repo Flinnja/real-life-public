@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :task do
     trait :valid do
       activity "Lift heavy things"
-      date "2015-11-22"
+      date Date.today+1
       status "Pending"
     end
     trait :invalid do
