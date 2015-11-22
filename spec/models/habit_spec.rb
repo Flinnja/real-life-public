@@ -7,7 +7,7 @@ RSpec.describe Habit, type: :model do
     end
 
     it "adds to the db when saved" do
-      expect{Habit.new(@attrs).save}.to change{Habit.count}.by(1)
+      expect{Habit.create(@attrs)}.to change{Habit.count}.by(1)
     end
   end
 
@@ -16,7 +16,7 @@ RSpec.describe Habit, type: :model do
       @inv_attrs = FactoryGirl.attributes_for(:habit, :invalid)
     end
     it "does not add to the db when saved" do
-      expect{Habit.new(@inv_attrs).save}.to_not change{Habit.count}
+      expect{Habit.create(@inv_attrs)}.to_not change{Habit.count}
     end
   end
 
