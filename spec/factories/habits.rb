@@ -3,8 +3,8 @@ FactoryGirl.define do
     trait :valid do
       name "Running"
       description "Run every day to get better at running"
-      start_date "01-12-2016"
-      end_date "31-12-2016"
+      start_date Date.today+1
+      end_date Date.today+5
       frequency 1
       user_id 1
     end
