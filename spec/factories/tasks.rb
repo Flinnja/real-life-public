@@ -1,8 +1,14 @@
 FactoryGirl.define do
   factory :task do
-    activity "MyString"
-date "2015-11-22"
-status "MyString"
+    trait :valid do
+      activity "Lift heavy things"
+      date "2015-11-22"
+      status "Pending"
+    end
+    trait :invalid do
+      activity ''
+      date '1999-11-11'
+      status ''
+    end
   end
-
 end

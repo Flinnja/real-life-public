@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :habits
-  devise_for :users
   root to: 'site#index'
+  devise_for :users
+  resources :habits
+  put 'tasks/:id' => 'tasks#update'
 end
