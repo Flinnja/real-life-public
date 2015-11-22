@@ -15,10 +15,27 @@
 
 h1 {
   font-family: 'PT Sans Narrow', sans-serif;
-  width: 5em;
+  font-size: 2.5em;
   margin-left: auto;
   margin-right: auto;
 }
+
+.promo_sign_up {
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#promo_li1 {
+  font-size: 2em;
+}
+
+#promo_li2 a {
+  font-size: 3em;
+  color: red;
+  text-decoration: none;
+}
+
 
 /*Navigation
 ------------------------------------*/
