@@ -15,5 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
-node_modules/
-./client/node_modules
+node_modules
+client/node_modules
+app/assets/javascripts/generated/client-bundle.js
