@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :habits
   put 'tasks/:id' => 'tasks#update'
+
 end

@@ -9,21 +9,21 @@
   border-radius: 10px;
 }
 
-#promo_header1 {
+.promo_header1 {
   color: #EB6E44;
   font-size: 5em;
   margin: 10px 65% 0 5%;
   padding: 0;
 }
 
-#promo_header2 {
+.promo_header2 {
   color: #EB6E44;
   font-size: 3em;
   margin: 10px 35% 0 5%;
   padding: 0;
 }
 
-#promo_header3 {
+.promo_header3 {
   color: #EB6E44;
   font-style: italic;
   margin: 0 65% 0 5%;
@@ -46,6 +46,25 @@
 #promo_avatar {
   margin: auto;
   padding: 50px;
+}
+
+/* Sign Up Page
+------------------------------*/
+
+.container {
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 40%;
+}
+
+.sign_up_page {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.field {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
 }
 
 
