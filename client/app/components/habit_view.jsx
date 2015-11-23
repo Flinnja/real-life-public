@@ -11,17 +11,20 @@ var HabitView = React.createClass({
   getInitialState: function () {
     return {
       name: 'Simon',
-      showImg: false
+      showImg: false,
+      habitButton: 'add'
     }
   },
 
   render: function () {
     var img = (<img src={this.props.image} />)
 
+    console.log('props in HabitView', this.props)
+
     return(
       <div onClick={this.clickHandler}>
         {this.state.name}
-        <HabitButton />
+        <HabitButton status={this.state.habitButton} onAddHabit={this.onAddHabit.bind(this)} />
         <HabitNavHome />
         <HabitCanvas />
         <HabitNavNeeds />
@@ -34,7 +37,14 @@ var HabitView = React.createClass({
 
   clickHandler: function () {
     this.setState({ showImg: !this.state.showImg })
-  }
+  },
+
+
+  onAddHabit: function (status) {
+    console.log('status in HabitView', status)
+
+    this.setState({ habitButton: status })
+  },
 
 //   getInitialState: function () {
 //     return {

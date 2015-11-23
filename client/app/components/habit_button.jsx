@@ -14,6 +14,8 @@ var HabitButton = React.createClass({
   },
 
   render: function() {
+    console.log('props in HabitButton', this.props)
+
       return <button onClick={this.handleClick}>
           Add new habit
       </button>;
@@ -78,10 +80,18 @@ var HabitButton = React.createClass({
           // pop up to user with how to fix it
         } else {
           console.log("posted successfully", res)
+
+
+          // this.setState({ habits: res.habits })
+
           // close the modal
           self.handleClose()
         }
       })
+
+      this.props.onAddHabit('edit')
+
+
   },
 
   handleClose: function() {
@@ -89,7 +99,9 @@ var HabitButton = React.createClass({
   },
 
   handleClick: function() {
-    this.setState({ clicked: !this.state.clicked });
+    this.props.onAddHabit('clicked')
+
+    // this.setState({ clicked: !this.state.clicked });
   }
 })
 
