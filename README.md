@@ -26,6 +26,9 @@ http://www.openmindedinnovations.com/blogs/3-ways-to-integrate-ruby-on-rails-rea
 React components from Simon:
 http://khan.github.io/react-components/
 
+React on github:
+https://github.com/facebook/react
+
 SuperAgent for routing stuff:
 https://github.com/visionmedia/superagent
 
