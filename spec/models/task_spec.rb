@@ -7,7 +7,7 @@ RSpec.describe Task, type: :model do
     end
 
     it "adds to the db when saved" do
-      expect{Task.new(@attrs).save}.to change{Task.count}.by(1)
+      expect{Task.create(@attrs)}.to change{Task.count}.by(1)
     end
   end
 
@@ -16,7 +16,7 @@ RSpec.describe Task, type: :model do
       @inv_attrs = FactoryGirl.attributes_for(:task, :invalid)
     end
     it "does not add to the db when saved" do
-      expect{Task.new(@inv_attrs).save}.to_not change{Task.count}
+      expect{Task.create(@inv_attrs)}.to_not change{Task.count}
     end
   end
 
