@@ -14,6 +14,11 @@ class HabitsController < ApplicationController
 
   def show
     @habit = Habit.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @habit }
+    end
   end
 
   def create

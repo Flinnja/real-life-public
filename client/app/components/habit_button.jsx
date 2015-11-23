@@ -34,16 +34,25 @@ var HabitButton = React.createClass({
         <div className="modal-body">
           <form>
             <div>
-              <label htmlfor="name">Name:</label>
+              <label htmlFor="name">Name: </label>
               <input type="text" id="name" />
             </div>
             <div>
-              <label htmlfor="description">Description:</label>
+              <label htmlFor="description">Description: </label>
               <input type="text" id="description" />
             </div>
             <div>
-              <label htmlfor="start-date">Start Date:</label>
+              <label htmlFor="start-date">Start Date: </label>
               <input type="date" id="start-date" />
+            </div>
+            <div>
+              <label htmlFor="end-date">End Date: </label>
+              <input type="date" id="end-date" />
+            </div>
+            <div>
+              <label htmlFor="frequency">Frequency: Every </label>
+              <input type="integer" id="frequency" />
+              <label htmlFor="frequency"> days</label>
             </div>
               <button onClick={this.handleFormButtonClick}>
                 Submit
@@ -63,8 +72,8 @@ var HabitButton = React.createClass({
       name: e.target.parentNode[0].value,
       description: e.target.parentNode[1].value,
       start_date: e.target.parentNode[2].value,
-      end_date: e.target.parentNode[2].value,
-      frequency: 1
+      end_date: e.target.parentNode[3].value,
+      frequency: e.target.parentNode[4].value
     }
   },
 
@@ -78,16 +87,10 @@ var HabitButton = React.createClass({
       .set('Accept', 'application/json')
       .end(function(err, res){
         if (err) {
-          console.log("error", err)
-          // check to see what kind of error
-          // pop up to user with how to fix it
+          alert("There is something wrong with your form, please try again")
         } else {
-          console.log("posted successfully", res)
-
-
+          console.log("posted successfully")
           // this.setState({ habits: res.habits })
-
-          // close the modal
           self.handleClose()
         }
       })
