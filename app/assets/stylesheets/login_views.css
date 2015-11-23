@@ -1,16 +1,59 @@
+/* Feature boxes
+-----------------------------*/
 
-
-.sign_up_form {
-  float: right;
+.feature_box {
+  background-color: #f3f2f2;
+  width: 50%;
+  height: 400px;
+  margin: 25px auto;
+  border-radius: 10px;
 }
 
-.login_button {
-  padding-top: 15px;
+#promo_header1 {
+  color: #EB6E44;
+  font-size: 5em;
+  margin: 10px 65% 0 5%;
+  padding: 0;
 }
 
-.page-header {
-  background-color: #339966;
-  padding: 0 15px;
+#promo_header2 {
+  color: #EB6E44;
+  font-size: 3em;
+  margin: 10px 35% 0 5%;
+  padding: 0;
+}
+
+#promo_header3 {
+  color: #EB6E44;
+  font-style: italic;
+  margin: 0 65% 0 5%;
+  padding: 0;
+}
+
+#join_button {
+  width: 75px;
+  margin-top: 60%;
+  margin-left: 80%;
+  padding: 15px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #EB6E44;
+}
+
+#promo_avatar {
+  margin: auto;
+  padding: 50px;
+}
+
+
+/* General
+------------------------------*/
+
+body {
+  background-color: #FFF5C3;
 }
 
 h1 {
@@ -20,29 +63,22 @@ h1 {
   margin-right: auto;
 }
 
-.promo_sign_up {
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
+.sign_up_form {
+  margin-top: 50px;
+  margin-left: 52.5%;
 }
 
-#promo_li1 {
-  font-size: 2em;
+.login_button {
+  padding: 10px;
+  margin-top: 15px;
 }
-
-#promo_li2 a {
-  font-size: 3em;
-  color: red;
-  text-decoration: none;
-}
-
 
 /*Navigation
 ------------------------------------*/
 
 .navbar-form .form-group {
   display: inline-block;
-  padding-left: 10px;
+  padding: 0 15px 15px 15px;
 }
 
 nav {
@@ -60,3 +96,18 @@ nav ul {
 nav li {
   display: inline-block;
 }
+
+/* Links
+------------------------------------*/
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: ;
+}
+
+
+
+
