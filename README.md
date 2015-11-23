@@ -1,4 +1,4 @@
-# real-life
+# Real Life, yo!
 (Half of) Ruru's final project!
 
 Our waffle board:
