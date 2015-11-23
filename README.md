@@ -29,6 +29,9 @@ http://khan.github.io/react-components/
 React on github:
 https://github.com/facebook/react
 
+React docs:
+http://facebook.github.io/react/
+
 SuperAgent for routing stuff:
 https://github.com/visionmedia/superagent
 
