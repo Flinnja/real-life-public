@@ -2,9 +2,10 @@ import React from 'react'
 import request from 'superagent'
 
 var HabitButton = require('./habit_button')
-var HabitNavHome = require('./habit_nav_home')
 var HabitCanvas = require('./habit_canvas')
+var HabitNavHome = require('./habit_nav_home')
 var HabitNavNeeds = require('./habit_nav_needs')
+
 var HabitView = React.createClass({
 
   componentWillMount: function () {
@@ -42,8 +43,8 @@ var HabitView = React.createClass({
       <div onClick={this.clickHandler}>
         {this.state.name}
         <HabitButton status={this.state.habitButton} onAddHabit={this.onAddHabit.bind(this)} />
-        <HabitNavHome />
         <HabitCanvas />
+        <HabitNavHome />
         <HabitNavNeeds />
         <div>
           { this.state.showImg ? img : null}
