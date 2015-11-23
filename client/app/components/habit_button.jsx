@@ -5,7 +5,6 @@ import request from 'superagent'
 var LayeredComponentMixin = require('react-layer-mixin')
 var Modal = require('react-awesome-modal')
 
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -15,8 +14,7 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
   }
-};
-
+}
 
 var HabitButton = React.createClass({
 
@@ -27,8 +25,7 @@ var HabitButton = React.createClass({
   },
 
   render: function() {
-    console.log('rendr props in HabitButton', this.props, this.state)
-
+    console.log('render props in HabitButton', this.props, this.state)
 
     return (
       <div>
