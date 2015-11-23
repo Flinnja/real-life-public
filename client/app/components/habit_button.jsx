@@ -111,7 +111,6 @@ var HabitButton = React.createClass({
 
   parseFormInput: function(e) {
     return {
-      user_id: 1,                           // MUST FIX THIS
       name: e.target.parentNode[0].value,
       description: e.target.parentNode[1].value,
       start_date: e.target.parentNode[2].value,
@@ -119,6 +118,11 @@ var HabitButton = React.createClass({
       frequency: e.target.parentNode[4].value
     }
   },
+
+getUserId: function() {
+ return true
+},
+
 
   handleFormButtonClick: function (e) {
     var self = this
