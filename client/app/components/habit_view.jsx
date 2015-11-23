@@ -56,27 +56,11 @@ var HabitView = React.createClass({
     this.setState({ showImg: !this.state.showImg })
   },
 
-
   onAddHabit: function (status) {
     console.log('status in HabitView', status)
 
     this.setState({ habitButton: status })
-  },
-
-//   getInitialState: function () {
-//     return {
-//       true
-//     }
-//   },
-
-//   render: function(){
-//     return (
-//       <div>
-//         <p>Hello</p>
-//         <PopUp />
-//       </div>
-//     )
-//   }
+  }
 })
 
 module.exports = HabitView

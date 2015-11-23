@@ -5,64 +5,67 @@ import request from 'superagent'
 var LayeredComponentMixin = require('../../react-components/js/layered-component-mixin.jsx')
 var Modal = require('../../react-components/modal.js')
 
-
 var HabitButton = React.createClass({
+
   mixins: [LayeredComponentMixin],
 
   getInitialState: function() {
-    return { clicked: false };
+    return { clicked: false }
   },
 
   render: function() {
-    console.log('props in HabitButton', this.props)
-
-      return <button onClick={this.handleClick}>
-          Add new habit
-      </button>;
+    // console.log('props in HabitButton', this.props)
+    return (
+      <button onClick={this.handleClick}>
+        Add New Habit
+      </button>
+    )
   },
+
   renderLayer: function() {
     if (this.state.clicked) {
-      return <Modal onClose={this.handleClose}>
-        <div className="modal-header">
-          Add new habit
-          <a href="javascript: void 0;"
-           style={{float: "right", textDecoration: "none"}}
-           onClick={this.handleClose}>
-            &#215;
-          </a>
-        </div>
-        <div className="modal-body">
-          <form>
-            <div>
-              <label htmlFor="name">Name: </label>
-              <input type="text" id="name" />
-            </div>
-            <div>
-              <label htmlFor="description">Description: </label>
-              <input type="text" id="description" />
-            </div>
-            <div>
-              <label htmlFor="start-date">Start Date: </label>
-              <input type="date" id="start-date" />
-            </div>
-            <div>
-              <label htmlFor="end-date">End Date: </label>
-              <input type="date" id="end-date" />
-            </div>
-            <div>
-              <label htmlFor="frequency">Frequency: Every </label>
-              <input type="integer" id="frequency" />
-              <label htmlFor="frequency"> days</label>
-            </div>
+      return (
+        <Modal onClose={this.handleClose}>
+          <div className="modal-header">
+            Add New Habit
+            <a href="javascript: void 0;"
+             style={{float: "right", textDecoration: "none"}}
+             onClick={this.handleClose}>
+              &#215;
+            </a>
+          </div>
+          <div className="modal-body">
+            <form>
+              <div>
+                <label htmlFor="name">Name: </label>
+                <input type="text" id="name" />
+              </div>
+              <div>
+                <label htmlFor="description">Description: </label>
+                <input type="text" id="description" />
+              </div>
+              <div>
+                <label htmlFor="start-date">Start Date: </label>
+                <input type="date" id="start-date" />
+              </div>
+              <div>
+                <label htmlFor="end-date">End Date: </label>
+                <input type="date" id="end-date" />
+                <label htmlFor="end-date"> (optional)</label>
+              </div>
+              <div>
+                <label htmlFor="frequency">Frequency: Every </label>
+                <input type="integer" id="frequency" />
+                <label htmlFor="frequency"> days</label>
+              </div>
               <button onClick={this.handleFormButtonClick}>
                 Submit
               </button>
-          </form>
-
-        </div>
-      </Modal>;
-    } else {
-      return <div />;
+            </form>
+          </div>
+        </Modal>
+    )} else {
+      return <div />
     }
   },
 
@@ -88,26 +91,24 @@ var HabitButton = React.createClass({
       .end(function(err, res){
         if (err) {
           alert("There is something wrong with your form, please try again")
+          console.log("Form Button Click Error: ", err)
         } else {
-          console.log("posted successfully")
+          console.log("Form posted successfully")
           // this.setState({ habits: res.habits })
           self.handleClose()
         }
       })
-
-      this.props.onAddHabit('edit')
-
-
+    this.props.onAddHabit('edit')
   },
 
   handleClose: function() {
-      this.setState({ clicked: false });
+    this.setState({ clicked: false })
   },
 
   handleClick: function() {
     this.props.onAddHabit('clicked')
 
-    this.setState({ clicked: !this.state.clicked });
+    this.setState({ clicked: !this.state.clicked })
   }
 })
 

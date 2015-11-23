@@ -4,11 +4,10 @@ var HabitCanvas = React.createClass({
   render: function() {
     return (
       <div>
-        <p> habit canvas </p>
+        <p>CANVAS</p>
       </div>
     )
   }
 })
 
 module.exports = HabitCanvas
-

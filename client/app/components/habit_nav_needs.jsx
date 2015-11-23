@@ -4,7 +4,7 @@ var HabitNavNeeds = React.createClass({
   render: function() {
     return (
       <div>
-        <p> habit nav needs </p>
+        <p>NEEDS</p>
       </div>
     )
   }
