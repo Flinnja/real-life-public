@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import request from 'superagent'
 
 var LayeredComponentMixin = require('../../react-components/js/layered-component-mixin.jsx')
-var Modal = require('../../react-components/modal.js')
+var Modal = require('../../react-components/js/modal.jsx')
 
 
 var HabitButton = React.createClass({
