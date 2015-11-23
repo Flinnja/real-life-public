@@ -21,27 +21,27 @@ RSpec.describe Habit, type: :model do
   end
 
   describe "Validations" do
-    it "validates habit name length" do
+    before(:each) do
       @attrs = FactoryGirl.attributes_for(:habit, :valid)
+    end
+    it "validates habit name length" do
       @attrs[:name] = ''
       expect(Habit.new(@attrs)).to_not be_valid
     end
 
     it "validates habit frequency presence" do
-      @attrs = FactoryGirl.attributes_for(:habit, :valid)
       @attrs[:frequency] = ''
       expect(Habit.new(@attrs)).to_not be_valid
     end
 
-    it "validates habit start_date syntax" do
-      @attrs = FactoryGirl.attributes_for(:habit, :valid)
-      @attrs[:start_date] = 'poo'
+    it "validates habit start_date present or future date" do
+      @attrs[:start_date] = Date.today-1
       expect(Habit.new(@attrs)).to_not be_valid
     end
 
-    it "validates habit start_date present or future date" do
-      @attrs = FactoryGirl.attributes_for(:habit, :valid)
-      @attrs[:start_date] = '01-12-2013'
+    it "validates end_date cannot be before start_date" do
+      @attrs[:start_date] = Date.today+5
+      @attrs[:end_date] = Date.today+2
       expect(Habit.new(@attrs)).to_not be_valid
     end
   end

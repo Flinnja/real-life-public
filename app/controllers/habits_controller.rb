@@ -17,6 +17,7 @@ class HabitsController < ApplicationController
   def create
     @habit = Habit.create(habit_params)
     if(@habit.valid?)
+      Scheduler.schedule_single(@habit)
       redirect_to habits_path
     else
       flash[:alert] = "ERROR: There were one or more problems with your new habit."
