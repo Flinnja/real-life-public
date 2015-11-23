@@ -2,71 +2,81 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import request from 'superagent'
 
-var LayeredComponentMixin = require('../../react-components/js/layered-component-mixin.jsx')
-var Modal = require('../../react-components/js/modal.jsx')
+var LayeredComponentMixin = require('react-layer-mixin')
+var Modal = require('react-awesome-modal')
+
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 
 var HabitButton = React.createClass({
 
-  mixins: [LayeredComponentMixin],
+  // mixins: [LayeredComponentMixin],
 
   getInitialState: function() {
-    return { clicked: false }
+    return { modalOpen: false }
   },
 
   render: function() {
-    // console.log('props in HabitButton', this.props)
-    return (
-      <button onClick={this.handleClick}>
-        Add New Habit
-      </button>
-    )
-  },
+    console.log('rendr props in HabitButton', this.props, this.state)
 
-  renderLayer: function() {
-    if (this.state.clicked) {
-      return (
-        <Modal onClose={this.handleClose}>
-          <div className="modal-header">
-            Add New Habit
-            <a href="javascript: void 0;"
-             style={{float: "right", textDecoration: "none"}}
-             onClick={this.handleClose}>
-              &#215;
-            </a>
-          </div>
-          <div className="modal-body">
-            <form>
-              <div>
-                <label htmlFor="name">Name: </label>
-                <input type="text" id="name" />
-              </div>
-              <div>
-                <label htmlFor="description">Description: </label>
-                <input type="text" id="description" />
-              </div>
-              <div>
-                <label htmlFor="start-date">Start Date: </label>
-                <input type="date" id="start-date" />
-              </div>
-              <div>
-                <label htmlFor="end-date">End Date: </label>
-                <input type="date" id="end-date" />
-                <label htmlFor="end-date"> (optional)</label>
-              </div>
-              <div>
-                <label htmlFor="frequency">Frequency: Every </label>
-                <input type="integer" id="frequency" />
-                <label htmlFor="frequency"> days</label>
-              </div>
-              <button onClick={this.handleFormButtonClick}>
-                Submit
-              </button>
-            </form>
-          </div>
-        </Modal>
-    )} else {
-      return <div />
-    }
+
+    return (
+      <div>
+        <button onClick={this.handleClick}>
+          Add New Habit
+        </button>
+        <Modal visible={this.state.modalOpen} style={customStyles}>
+            <div className="modal-header">
+              Add New Habit
+              <a href="javascript: void 0;"
+               style={{float: "right", textDecoration: "none"}}
+               onClick={this.handleClose}>
+                &#215;
+              </a>
+            </div>
+            <div className="modal-body">
+              <form>
+                <div>
+                  <label htmlFor="name">Name: </label>
+                  <input type="text" id="name" />
+                </div>
+                <div>
+                  <label htmlFor="description">Description: </label>
+                  <input type="text" id="description" />
+                </div>
+                <div>
+                  <label htmlFor="start-date">Start Date: </label>
+                  <input type="date" id="start-date" />
+                </div>
+                <div>
+                  <label htmlFor="end-date">End Date: </label>
+                  <input type="date" id="end-date" />
+                  <label htmlFor="end-date"> (optional)</label>
+                </div>
+                <div>
+                  <label htmlFor="frequency">Frequency: Every </label>
+                  <input type="integer" id="frequency" />
+                  <label htmlFor="frequency"> days</label>
+                </div>
+                <button onClick={this.handleFormButtonClick}>
+                  Submit
+                </button>
+              </form>
+            </div>
+          </Modal>
+      </div>
+
+    )
   },
 
   parseFormInput: function(e) {
@@ -102,12 +112,12 @@ var HabitButton = React.createClass({
   },
 
   handleClose: function() {
-    this.setState({ clicked: false })
+    this.setState({ modalOpen: false })
   },
 
   handleClick: function() {
     this.props.onAddHabit('clicked')
-    this.setState({ clicked: !this.state.clicked })
+    this.setState({ modalOpen: true })
   }
 })
 
