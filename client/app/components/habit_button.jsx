@@ -59,9 +59,12 @@ var HabitButton = React.createClass({
 
   parseFormInput: function(e) {
     return {
+      user_id: 1,
       name: e.target.parentNode[0].value,
       description: e.target.parentNode[1].value,
-      startDate: e.target.parentNode[2].value
+      start_date: e.target.parentNode[2].value,
+      end_date: e.target.parentNode[2].value,
+      frequency: 1
     }
   },
 
@@ -70,7 +73,7 @@ var HabitButton = React.createClass({
     e.preventDefault()
     var formData = this.parseFormInput(e)
     request
-      .post('/to-a-place')
+      .post('/habits')
       .send(formData)
       .set('Accept', 'application/json')
       .end(function(err, res){
@@ -101,7 +104,7 @@ var HabitButton = React.createClass({
   handleClick: function() {
     this.props.onAddHabit('clicked')
 
-    // this.setState({ clicked: !this.state.clicked });
+    this.setState({ clicked: !this.state.clicked });
   }
 })
 
