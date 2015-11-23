@@ -5,9 +5,14 @@ RSpec.describe HabitsController, type: :controller do
   describe "Create path" do
     describe "A valid post request" do
       let(:habit_params) {FactoryGirl.attributes_for :habit, :valid}
-      let!(:post_habit) {post :create, habit: habit_params}
+      let(:post_habit) {post :create, habit: habit_params}
       it "redirects to habits index" do
+        post_habit
         expect(response).to redirect_to(habits_path)
+      end
+      it "calls the scheduler for the new habit" do
+        expect(Scheduler).to receive(:schedule_single)
+        post_habit
       end
     end
     describe "An invalid post request" do
