@@ -28,6 +28,9 @@ class HabitsController < ApplicationController
   def create
     @habit = Habit.create(habit_params)
     if(@habit.valid?)
+      @habit.user = current_user
+      @habit.save
+      puts @habit.inspect
       Scheduler.schedule_single(@habit)
       redirect_to habits_path
     else
