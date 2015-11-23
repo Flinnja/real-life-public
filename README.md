@@ -4,7 +4,9 @@
 Our waffle board:
 https://waffle.io/ruru-2015/real-life
 
+---
 To make front end stuff work:
+
 In root folder:
 * bundle install
 * npm install
