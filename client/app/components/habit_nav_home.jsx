@@ -4,7 +4,7 @@ var HabitNavHome = React.createClass({
   render: function() {
     return (
       <div>
-        <p> hey </p>
+        <p> habit nav home </p>
       </div>
     )
   }
