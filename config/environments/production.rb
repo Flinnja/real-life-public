@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.react.jsx_transform_options = {
+  blacklist: ['spec.functionName', 'validation.react', 'strict'], # default options
+  optional: ["transformerName"],  # pass extra babel options
+  whitelist: ["useStrict"] # even more options
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

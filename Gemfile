@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'whenever', require: false
 
 gem 'devise'
+
+gem 'react-rails', '~> 1.4.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgres as the database for Active Record
