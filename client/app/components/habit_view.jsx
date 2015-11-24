@@ -8,8 +8,8 @@ import request from 'superagent'
 
 
 var HabitButton = require('./habit_button')
-var HabitNavHome = require('./habit_nav_home')
 var HabitCanvas = require('./habit_canvas')
+var HabitNavHome = require('./habit_nav_home')
 var HabitNavNeeds = require('./habit_nav_needs')
 
 var HabitView = React.createClass({
@@ -50,9 +50,9 @@ class HabitView extends Component {
 
       <div onClick={this.clickHandler}>
         {this.state.name}
-        <HabitButton />
-        <HabitNavHome />
+        <HabitButton status={this.state.habitButton} onAddHabit={this.onAddHabit.bind(this)} />
         <HabitCanvas />
+        <HabitNavHome />
         <HabitNavNeeds />
         <div>
           { this.state.showImg ? img : null}
@@ -63,11 +63,7 @@ class HabitView extends Component {
 
   clickHandler: function () {
     this.setState({ showImg: !this.state.showImg })
-<<<<<<< HEAD
-  }
 
-
-=======
   },
 
   onAddHabit: function (status) {
@@ -75,7 +71,7 @@ class HabitView extends Component {
 
     this.setState({ habitButton: status })
   }
->>>>>>> 289a765... Tidy up code
+
 })
 
 
