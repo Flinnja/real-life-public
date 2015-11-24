@@ -1,20 +1,16 @@
 class NeedsController < ApplicationController
 
-  def new
-  end
-
-  def create
-    @need = Need.new(params.require(:need).permit(:goals_average))
-    @need.save
-    redirect_to @need
-  end
-
   def show
     @need = Need.find(params[:id])
   end
 
   def index
+    @needs = Need.all
+  end
 
+  def update
+
+    redirect_to :action => 'show', :id => 1
   end
 
 private

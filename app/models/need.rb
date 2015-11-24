@@ -6,5 +6,4 @@ class Need < ActiveRecord::Base
   #   return need
   # end
 
-
 end
