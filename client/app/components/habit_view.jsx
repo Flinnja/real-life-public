@@ -32,8 +32,8 @@ var HabitView = React.createClass({
     // this.setState({ habitButton: HabitButtonStatus})
   },
 
+  render: function () {
 
-class HabitView extends Component {
 
   constructor(props) {
     super(props)
@@ -42,23 +42,25 @@ class HabitView extends Component {
 
   render(){
     return(
+
       <div>
         <PopUp />
         <PopUp />
         <PopUp />
         <PopUp />
+      <div onClick={this.props.clickHandler}>
+        {this.props.name}
+        <HabitButton status={this.props.habitButton} onAddHabit={this.props.onAddHabit} />
 
-      <div onClick={this.clickHandler}>
-        {this.state.name}
-        <HabitButton status={this.state.habitButton} onAddHabit={this.onAddHabit.bind(this)} />
         <HabitCanvas />
         <HabitNavHome />
         <HabitNavNeeds />
         <div>
-          { this.state.showImg ? img : null}
+          { this.props.showImg ? img : null}
         </div>
       </div>
     )
+
   },
 
   clickHandler: function () {
@@ -70,6 +72,7 @@ class HabitView extends Component {
     console.log('status in HabitView', status)
 
     this.setState({ habitButton: status })
+
   }
 
 })
