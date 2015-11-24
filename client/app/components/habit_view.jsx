@@ -5,6 +5,10 @@ var PopUp = require('./popUp')
 
 
 var HabitButton = require('./habit_button')
+var HabitNavHome = require('./habit_nav_home')
+var HabitCanvas = require('./habit_canvas')
+var HabitNavNeeds = require('./habit_nav_needs')
+
 
 
 class HabitView extends Component {
@@ -25,6 +29,9 @@ class HabitView extends Component {
       <div onClick={this.clickHandler}>
         {this.state.name}
         <HabitButton />
+        <HabitNavHome />
+        <HabitCanvas />
+        <HabitNavNeeds />
         <div>
           { this.state.showImg ? img : null}
         </div>
