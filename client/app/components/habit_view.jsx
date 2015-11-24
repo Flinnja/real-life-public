@@ -63,9 +63,19 @@ class HabitView extends Component {
 
   clickHandler: function () {
     this.setState({ showImg: !this.state.showImg })
+<<<<<<< HEAD
   }
 
 
+=======
+  },
+
+  onAddHabit: function (status) {
+    console.log('status in HabitView', status)
+
+    this.setState({ habitButton: status })
+  }
+>>>>>>> 289a765... Tidy up code
 })
 
 
