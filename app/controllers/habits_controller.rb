@@ -2,7 +2,8 @@ class HabitsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @habits = Habit.all
+    @habit = Habit.first
+    @tasks = Task.all
     respond_to do |format|
       format.html {render "habits/index.html.erb"}
       format.json {render json: @habits }
