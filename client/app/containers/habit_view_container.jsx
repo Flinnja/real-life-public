@@ -26,8 +26,7 @@ var HabitViewContainer = React.createClass({
   getInitialState: function () {
     return Object.assign({}, this.props, {
       name: 'Simon',
-      showImg: false,
-      habitButton: 'add'
+      showImg: false
     })
   },
 

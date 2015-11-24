@@ -63,11 +63,11 @@ var HabitButton = React.createClass({
 
       <div>
         <button onClick={this.handleClick}>
-          Add New Habit
+          { this.getButtonTitle() }
         </button>
         <Modal visible={this.state.modalOpen} style={customStyles}>
             <div className="modal-header">
-              Add New Habit
+              { this.getButtonTitle() }
               <a href="javascript: void 0;"
                style={{float: "right", textDecoration: "none"}}
                onClick={this.handleClose}>
@@ -78,7 +78,7 @@ var HabitButton = React.createClass({
               <form>
                 <div>
                   <label htmlFor="name">Name: </label>
-                  <input type="text" id="name" />
+                  <input type="text" id="name" defaultValue={this.getHabitName()} />
                 </div>
                 <div>
                   <label htmlFor="description">Description: </label>
@@ -109,6 +109,10 @@ var HabitButton = React.createClass({
     )
   },
 
+  getHabitName: function () {
+    return this.props.habit ? this.props.habit.name : undefined
+  },
+
   parseFormInput: function(e) {
     return {
       name: e.target.parentNode[0].value,
@@ -119,10 +123,10 @@ var HabitButton = React.createClass({
     }
   },
 
-getUserId: function() {
- return true
-},
-
+  getButtonTitle: function () {
+    return this.props.habit ?
+      "Edit Your Habit" : "Add New Habit"
+  },
 
   handleFormButtonClick: function (e) {
     var self = this
