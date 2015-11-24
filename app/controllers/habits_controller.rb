@@ -1,6 +1,8 @@
 class HabitsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
+    render "habits/index.html.erb"
   end
 
   def new
@@ -45,7 +47,7 @@ class HabitsController < ApplicationController
 
   private
   def habit_params
-    params.require(:habit).permit(:name,:description,:frequency,:start_date,:end_date,)
+    params.require(:habit).permit(:user_id,:name,:description,:frequency,:start_date,:end_date,)
   end
 
 end
