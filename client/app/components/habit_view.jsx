@@ -9,7 +9,9 @@ var HabitNavNeeds = require('./habit_nav_needs')
 var HabitView = React.createClass({
   render: function () {
     var img = (<img src={this.props.image} />)
+
     var tasks = this.props.tasks || []
+
     console.log('props in HabitView', this.props)
 
     return(
