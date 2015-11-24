@@ -17,6 +17,7 @@
 /tmp
 
 
+
 client/node_modules
 node_modules/
 app/assets/javascripts/generated/
