@@ -19,9 +19,8 @@
 
 npm-debug.log
 client/node_modules
-
 node_modules/
 app/assets/javascripts/generated/
 client/react-components/node_modules
-npm-debug.log
+
 
