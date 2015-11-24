@@ -19,7 +19,6 @@ const customStyles = {
 
 var HabitButton = React.createClass({
 
-  // mixins: [LayeredComponentMixin],
 
   getInitialState: function() {
     return { modalOpen: false }
@@ -34,46 +33,45 @@ var HabitButton = React.createClass({
           { this.getButtonTitle() }
         </button>
         <Modal visible={this.state.modalOpen} style={customStyles}>
-            <div className="modal-header">
-              { this.getButtonTitle() }
-              <a href="javascript: void 0;"
-               style={{float: "right", textDecoration: "none"}}
-               onClick={this.handleClose}>
-                &#215;
-              </a>
-            </div>
-            <div className="modal-body">
-              <form>
-                <div>
-                  <label htmlFor="name">Name: </label>
-                  <input type="text" id="name" defaultValue={this.getHabitProps().name} />
-                </div>
-                <div>
-                  <label htmlFor="description">Description: </label>
-                  <input type="text" id="description" defaultValue={this.getHabitProps().description} />
-                </div>
-                <div>
-                  <label htmlFor="start-date">Start Date: </label>
-                  <input type="date" id="start-date" defaultValue={this.getHabitProps().start_date} />
-                </div>
-                <div>
-                  <label htmlFor="end-date">End Date: </label>
-                  <input type="date" id="end-date" defaultValue={this.getHabitProps().end_date} />
-                  <label htmlFor="end-date"> (optional)</label>
-                </div>
-                <div>
-                  <label htmlFor="frequency">Frequency: Every </label>
-                  <input type="integer" id="frequency" defaultValue={this.getHabitProps().frequency} />
-                  <label htmlFor="frequency"> days</label>
-                </div>
-                <button onClick={this.handleFormButtonClick}>
-                  Submit
-                </button>
-              </form>
-            </div>
-          </Modal>
+          <div className="modal-header">
+            { this.getButtonTitle() }
+            <a href="javascript: void 0;"
+             style={{float: "right", textDecoration: "none"}}
+             onClick={this.handleClose}>
+              &#215;
+            </a>
+          </div>
+          <div className="modal-body">
+            <form>
+              <div>
+                <label htmlFor="name">Name: </label>
+                <input type="text" id="name" defaultValue={this.getHabitProps().name} />
+              </div>
+              <div>
+                <label htmlFor="description">Description: </label>
+                <input type="text" id="description" defaultValue={this.getHabitProps().description} />
+              </div>
+              <div>
+                <label htmlFor="start-date">Start Date: </label>
+                <input type="date" id="start-date" defaultValue={this.getHabitProps().start_date} />
+              </div>
+              <div>
+                <label htmlFor="end-date">End Date: </label>
+                <input type="date" id="end-date" defaultValue={this.getHabitProps().end_date} />
+                <label htmlFor="end-date"> (optional)</label>
+              </div>
+              <div>
+                <label htmlFor="frequency">Frequency: Every </label>
+                <input type="integer" id="frequency" defaultValue={this.getHabitProps().frequency} />
+                <label htmlFor="frequency"> days</label>
+              </div>
+              <button onClick={this.handleFormButtonClick}>
+                Submit
+              </button>
+            </form>
+          </div>
+        </Modal>
       </div>
-
     )
   },
 
@@ -111,20 +109,38 @@ var HabitButton = React.createClass({
     var self = this
     e.preventDefault()
     var formData = this.parseFormInput(e)
-    request
-      .post('/habits')
-      .send(formData)
-      .set('Accept', 'application/json')
-      .end(function(err, res){
-        if (err) {
-          alert("There is something wrong with your form, please try again")
-          console.log("Form Button Click Error: ", err)
-        } else {
-          console.log("Form posted successfully")
-          // this.setState({ habits: res.habits })
-          self.handleClose()
-        }
-      })
+
+    if (this.props.habit) {
+      request
+        .patch('/habits/' + this.props.habit.id)
+        .send(formData)
+        .set('Accept', 'application/json')
+        .end(function(err, res){
+          if (err) {
+            alert("There is something wrong with your form, please try again")
+            console.log("Form Button Click Error: ", err)
+          } else {
+            console.log("Form updated successfully")
+            self.handleClose()
+          }
+        })
+    } else {
+      request
+        .post('/habits')
+        .send(formData)
+        .set('Accept', 'application/json')
+        .end(function(err, res){
+          if (err) {
+            alert("There is something wrong with your form, please try again")
+            console.log("Form Button Click Error: ", err)
+          } else {
+            console.log("Form posted successfully")
+            // this.setState({ habits: res.habits })
+            self.handleClose()
+          }
+        })
+    }
+
     this.props.onAddHabit('edit')
   },
 
@@ -136,6 +152,7 @@ var HabitButton = React.createClass({
     this.props.onAddHabit('clicked')
     this.setState({ modalOpen: true })
   }
+
 })
 
 module.exports = HabitButton

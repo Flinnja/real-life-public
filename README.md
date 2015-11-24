@@ -39,6 +39,9 @@ https://github.com/visionmedia/superagent
 Scrollable div using css:
 http://stackoverflow.com/questions/9707397/making-a-div-vertically-scrollable-using-css
 
+Flexbox:
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 ---
 ## Back End
 For scheduling: 

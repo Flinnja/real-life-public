@@ -33,6 +33,5 @@
     "vim-spec": "npm run lint $TEST && npm run spec $TEST",
     "lint": "snazzy",
     "shrinkwrap": "npm-shrinkwrap"
-  },
-  "description": ""
+  }
 }
