@@ -18,28 +18,14 @@ class HabitView extends Component {
         <PopUp />
       </div>
     )
+  },
+
+  clickHandler: function () {
+    this.setState({ showImg: !this.state.showImg })
   }
 
-// React.render(<ButtonWithDialog />, domNode)
 
-// require('./habit_view.css')
+})
 
-  // render() {
-  //   return (
-  //     <popUp>
-  //       <ButtonWithDialog />
-  //     </popUp>
-  //   )
-  // }
-
-  // render() {
-  //   return (
-  //     <div className='test'>
-  //       <p>Hello Sulu</p>
-  //     </div>
-  //   )
-  // }
-
-}
 
 module.exports = HabitView
