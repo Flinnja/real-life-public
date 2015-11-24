@@ -1,7 +1,9 @@
 class Scheduler
   def self.schedule
     Habit.all.each do |habit|
-      Scheduler.schedule_single(habit)
+      if habit.end_date > Date.today
+        Scheduler.schedule_single(habit)
+      end
     end
   end
 
@@ -11,4 +13,6 @@ class Scheduler
         task.save
       end
   end
+
+
 end

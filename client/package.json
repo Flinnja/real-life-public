@@ -55,6 +55,16 @@
     "global": [
       "$"
     ]
+    "style-loader": "^0.12.3",
+    "superagent": "^1.4.0",
+    "webpack": "^1.10.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   },
   "scripts": {
     "start": "webpack-dev-server --hot --inline --config webpack.hot.config.js --colors --no-info --port 5000",

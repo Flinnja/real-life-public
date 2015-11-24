@@ -18,8 +18,6 @@ const customStyles = {
 
 var HabitButton = React.createClass({
 
-  // mixins: [LayeredComponentMixin],
-
   getInitialState: function() {
     return { modalOpen: false }
   },
@@ -72,7 +70,6 @@ var HabitButton = React.createClass({
           </div>
         </Modal>
       </div>
-
     )
   },
 
@@ -110,7 +107,6 @@ var HabitButton = React.createClass({
     var self = this
     e.preventDefault()
     var formData = this.parseFormInput(e)
-
     if (this.props.habit) {
       request
         .patch('/habits/' + this.props.habit.id)
@@ -152,6 +148,7 @@ var HabitButton = React.createClass({
     this.props.onAddHabit('clicked')
     this.setState({ modalOpen: true })
   }
+
 })
 
 module.exports = HabitButton

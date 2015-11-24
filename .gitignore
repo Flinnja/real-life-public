@@ -20,3 +20,4 @@ client/node_modules
 app/assets/javascripts/generated/client-bundle.js
 npm-debug.log
 coverage
+npm-debug.log

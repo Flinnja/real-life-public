@@ -3,7 +3,11 @@ class HabitsController < ApplicationController
 
   def index
     @habit = current_user.last_habit
+<<<<<<< HEAD
     @tasks = @habit.tasks_in_ascending_date_order
+=======
+    @tasks =  @habit ? @habit.tasks_in_ascending_date_order : Array.new()
+>>>>>>> 7172f983dec55ac56e797caea0048984742f8730
     respond_to do |format|
       format.html {render "habits/index.html.erb"}
       format.json {render json: @habits }
