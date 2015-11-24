@@ -31,4 +31,8 @@ class Habit < ActiveRecord::Base
     errors.add(:end_date, "can't be before start date") if
       !end_date.blank? and end_date < start_date
   end
+
+  def tasks_in_ascending_date_order
+    tasks.order(:date)
+  end
 end
