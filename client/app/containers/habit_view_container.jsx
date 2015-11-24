@@ -30,10 +30,13 @@ var HabitViewContainer = React.createClass({
   },
 
   render: function () {
+    console.log('render HabitViewContainer state, props:', this.state, this.props)
+
     return < HabitView
       { ...this.state}
       clickHandler={this.clickHandler}
-      onAddHabit={this.onAddHabit} />
+      onAddHabit={this.onAddHabit}
+      resetHabitState={this.resetHabitState} />
   },
 
   clickHandler: function () {
@@ -44,6 +47,11 @@ var HabitViewContainer = React.createClass({
     console.log('status in HabitView', status)
 
     this.setState({ habitButton: status })
+  },
+
+  resetHabitState: function (habit) {
+    this.setState( { habit: habit } )
+    console.log('resetHabitState', habit)
   }
 })
 

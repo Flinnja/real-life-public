@@ -9,17 +9,14 @@ var HabitNavNeeds = require('./habit_nav_needs')
 var HabitView = React.createClass({
   render: function () {
     var img = (<img src={this.props.image} />)
-
     var tasks = this.props.tasks || []
 
     console.log('props in HabitView', this.props)
-    console.log('tasks', this.props.tasks)
-
 
     return(
       <div onClick={this.props.clickHandler}>
         {this.props.name}
-        <HabitButton habit={this.props.habit} onAddHabit={this.props.onAddHabit} />
+        <HabitButton habit={this.props.habit} onAddHabit={this.props.onAddHabit} resetHabitState={this.props.resetHabitState} />
         <HabitCanvas tasks={tasks} />
         <HabitNavHome />
         <HabitNavNeeds />

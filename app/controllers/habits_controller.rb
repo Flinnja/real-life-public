@@ -42,9 +42,10 @@ class HabitsController < ApplicationController
 
   def update
     @habit = Habit.find(params[:id])
+    puts @habit.inspect
     if(@habit.update(habit_params))
-      flash[:notice] = "Your habit has been updated."
-      redirect_to habit_path(@habit)
+      # flash[:notice] = "Your habit has been updated."
+      render json: @habit
     else
       flash[:alert] = "ERROR: Your habit update was unsuccessful."
       render :edit

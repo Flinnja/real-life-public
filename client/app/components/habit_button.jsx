@@ -113,10 +113,13 @@ var HabitButton = React.createClass({
         .send(formData)
         .set('Accept', 'application/json')
         .end(function(err, res){
+          console.log('response', res)
+          console.log('error', err)
           if (err) {
-            alert("There is something wrong with your form, please try again")
             console.log("Form Button Click Error: ", err)
           } else {
+            var habit = JSON.parse(res.text)
+            self.props.resetHabitState(habit)
             console.log("Form updated successfully")
             self.handleClose()
           }
@@ -128,16 +131,15 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
-            alert("There is something wrong with your form, please try again")
             console.log("Form Button Click Error: ", err)
           } else {
+            var habit = JSON.parse(res.text)
+            self.props.resetHabitState(habit)
             console.log("Form posted successfully")
-            // this.setState({ habits: res.habits })
             self.handleClose()
           }
         })
     }
-    this.props.onAddHabit('edit')
   },
 
   handleClose: function() {

@@ -42,8 +42,6 @@ var HabitCanvas = React.createClass({
   },
 
   renderBlock: function (task) {
-    console.log('task in renderBlock', task)
-
     return (
       <div className="block">
         { task.status }
