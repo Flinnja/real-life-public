@@ -6,15 +6,34 @@ var HabitCanvas = React.createClass({
 
     console.log("tasksGrid", tasksGrid)
 
+    var canvasStyle = {
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'nowrap',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-end'
+    }
+
     return (
-      <div className="canvas">
+      <div style={canvasStyle}>
         { tasksGrid.map(this.renderTower) }
       </div>
     )
   },
 
   renderTower: function (tasks) {
-    return <div className="tower">
+
+    var towerStyle = {
+      display: 'flex',
+      flexDirection: 'column-reverse',
+      flexWrap: 'nowrap',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start'
+    }
+
+    return <div style={towerStyle}>
       { tasks.map(this.renderBlock) }
     </div>
   },
