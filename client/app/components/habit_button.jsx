@@ -78,24 +78,24 @@ var HabitButton = React.createClass({
               <form>
                 <div>
                   <label htmlFor="name">Name: </label>
-                  <input type="text" id="name" defaultValue={this.getHabitName()} />
+                  <input type="text" id="name" defaultValue={this.getHabitProps().name} />
                 </div>
                 <div>
                   <label htmlFor="description">Description: </label>
-                  <input type="text" id="description" />
+                  <input type="text" id="description" defaultValue={this.getHabitProps().description} />
                 </div>
                 <div>
                   <label htmlFor="start-date">Start Date: </label>
-                  <input type="date" id="start-date" />
+                  <input type="date" id="start-date" defaultValue={this.getHabitProps().start_date} />
                 </div>
                 <div>
                   <label htmlFor="end-date">End Date: </label>
-                  <input type="date" id="end-date" />
+                  <input type="date" id="end-date" defaultValue={this.getHabitProps().end_date} />
                   <label htmlFor="end-date"> (optional)</label>
                 </div>
                 <div>
                   <label htmlFor="frequency">Frequency: Every </label>
-                  <input type="integer" id="frequency" />
+                  <input type="integer" id="frequency" defaultValue={this.getHabitProps().frequency} />
                   <label htmlFor="frequency"> days</label>
                 </div>
                 <button onClick={this.handleFormButtonClick}>
@@ -109,8 +109,19 @@ var HabitButton = React.createClass({
     )
   },
 
-  getHabitName: function () {
-    return this.props.habit ? this.props.habit.name : undefined
+  getHabitProps: function () {
+    var HabitProps = {}
+    if (this.props.habit) {
+      HabitProps = {
+        name: this.props.habit.name,
+        description: this.props.habit.description,
+        start_date: this.props.habit.start_date,
+        end_date: this.props.habit.end_date,
+        frequency: this.props.habit.frequency
+      }
+    }
+    return HabitProps
+    // return this.props.habit ? this.props.habit.name : undefined
   },
 
   parseFormInput: function(e) {
