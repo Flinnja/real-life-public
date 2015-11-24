@@ -13,10 +13,8 @@ var HabitViewContainer = React.createClass({
       .set('Content-Type', 'application/json')
       .end(function (err, res) {
         if (err) {
-          console.log("componentWillMount error", err)
         } else {
           var habits = JSON.parse(res.text)
-          console.log("componentWillMount response: ", habits)
         }
       })
     // this.setState({ habitButton: HabitButtonStatus})
@@ -30,8 +28,6 @@ var HabitViewContainer = React.createClass({
   },
 
   render: function () {
-    console.log('render HabitViewContainer state, props:', this.state, this.props)
-
     return < HabitView
       { ...this.state}
       clickHandler={this.clickHandler}
@@ -44,14 +40,11 @@ var HabitViewContainer = React.createClass({
   },
 
   onAddHabit: function (status) {
-    console.log('status in HabitView', status)
-
     this.setState({ habitButton: status })
   },
 
   resetHabitState: function (habit) {
     this.setState( { habit: habit } )
-    console.log('resetHabitState', habit)
   }
 })
 

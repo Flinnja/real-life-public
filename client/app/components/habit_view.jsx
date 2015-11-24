@@ -11,8 +11,6 @@ var HabitView = React.createClass({
     var img = (<img src={this.props.image} />)
     var tasks = this.props.tasks || []
 
-    console.log('props in HabitView', this.props)
-
     return(
       <div onClick={this.props.clickHandler}>
         {this.props.name}

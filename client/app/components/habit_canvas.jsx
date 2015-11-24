@@ -5,8 +5,6 @@ var HabitCanvas = React.createClass({
   render: function() {
     var tasksGrid = this.getTasksGrid()
 
-    console.log("tasksGrid", tasksGrid)
-
     var canvasStyle = {
       height: '100%',
       width: '100%',
