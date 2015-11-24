@@ -53,7 +53,7 @@ var HabitView = React.createClass({
         <HabitButton status={this.props.habitButton} onAddHabit={this.props.onAddHabit} />
 
         <HabitButton habit={this.props.habit} onAddHabit={this.props.onAddHabit} />
-        <HabitCanvas />
+        <HabitCanvas tasks={this.props.tasks} />
         <HabitNavHome />
         <HabitNavNeeds />
         <div>
