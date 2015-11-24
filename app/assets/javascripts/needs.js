@@ -7,37 +7,44 @@ create table html
       </tr>
       print row 7 times
 */
-$(document).on('page:load', function() {
-  console.log("test");
-  var date = new Date(day, month, year);
+
+$(document).ready( function() {
+  var date = new Date();
   var need = $(this).attr("id");
 
-  var ratingBoxTable1 =
-    '<div id="goals_rating_box" class="rating_box">
-      <table id="rating_box_table">'
-  var ratingBoxTable2 =
-    '</table>
-    </div>';
+  var ratingTable1 =
+    '<div id="goals_rating_box" class="rating_box">' +
+    '<table id="rating_box_table">';
+  var ratingTable2 =
+    '</table>' +
+    '</div>';
 
-  var ratingBoxRows =
-    '<tr>
-      <td>' + date + '</td>
-      <td>
-        <form>
-          <p>Rating</p>
-          <input type="text">
-          <input type="submit">
-        </form>
-      </td>
-    </tr>';
+  var ratingRows =
+    '<tr>' +
+      '<td>' + date + '</td>' +
+      '<td>' +
+        '<%= form_for :need do |f| %>' +
+          '<p>Rating</p>' +
+          '<%= f.text_field :goals_average %>' +
+          '<%= f.submit %>' +
+        '<% end %>' +
+      '</td>' +
+    '</tr>';
+
+var createRatingRows = "";
+
+
+function printRatingRows() {
+  for (i = 0; i < 7; i++) {
+    createRatingRows += ratingRows;
+    date += 1;
+  }
+  return createRatingRows;
+}
 
   $('.status_bar').on('click', function() {
-    $(this).html(ratingBoxTable1);
-    for (i = 0; i < 7; i++) {
-      $(this).html(ratingBoxRows);
-      date += 1;
-      $(this).html(ratingBoxTable2);
-    }
+    $(this).html(
+      ratingTable1 + printRatingRows() + ratingTable2;
+    );
   });
-  $('#goals').css();
 });
