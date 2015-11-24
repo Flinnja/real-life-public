@@ -25,8 +25,6 @@ var HabitButton = React.createClass({
   },
 
   render: function() {
-    console.log('render props in HabitButton', this.props, this.state)
-
     return (
       <div>
         <button onClick={this.handleClick}>
@@ -117,10 +115,9 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
-            alert("There is something wrong with your form, please try again")
-            console.log("Form Button Click Error: ", err)
           } else {
-            console.log("Form updated successfully")
+            var habit = JSON.parse(res.text)
+            self.props.resetHabitState(habit)
             self.handleClose()
           }
         })
@@ -131,17 +128,17 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
-            alert("There is something wrong with your form, please try again")
-            console.log("Form Button Click Error: ", err)
           } else {
-            console.log("Form posted successfully")
-            // this.setState({ habits: res.habits })
+            var habit = JSON.parse(res.text)
+            self.props.resetHabitState(habit)
             self.handleClose()
           }
         })
     }
 
+
     this.props.onAddHabit('edit')
+
   },
 
   handleClose: function() {
