@@ -42,18 +42,13 @@ var HabitButton = React.createClass({
   },
 
   render: function() {
-<<<<<<< HEAD
-      return <button onClick={this.handleClick}>
-          Add new habit
-      </button>;
-=======
     // console.log('props in HabitButton', this.props)
     return (
       <button onClick={this.handleClick}>
         Add New Habit
       </button>
     )
->>>>>>> 289a765... Tidy up code
+
   },
 
   renderLayer: function() {
