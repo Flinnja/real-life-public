@@ -5,6 +5,7 @@ import request from 'superagent'
 var LayeredComponentMixin = require('react-layer-mixin')
 var Modal = require('react-awesome-modal')
 
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -18,39 +19,7 @@ const customStyles = {
 
 var HabitButton = React.createClass({
 
-  mixins: [LayeredComponentMixin],
-    render: function() {
-        return <button onClick={this.handleClick}>
-            Click Me!
-        </button>;
-    },
-    renderLayer: function() {
-        if (this.state.clicked) {
-            return <Modal onClose={this.handleClose}>
-                <div className="modal-header">
-                    Header
-                    <a href="javascript: void 0;"
-                       style={{float: "right", textDecoration: "none"}}
-                       onClick={this.handleClose}>
-                        &#215;
-                    </a>
-                </div>
-                <div className="modal-body">Body!</div>
-            </Modal>;
-        } else {
-            return <div />;
-        }
-    },
-    // {{{
-    handleClose: function() {
-        this.setState({ clicked: false });
-    },
-    handleClick: function() {
-      this.setState({ clicked: !this.state.clicked });
-    },
-
   // mixins: [LayeredComponentMixin],
-
 
   getInitialState: function() {
     return { modalOpen: false }
@@ -60,7 +29,6 @@ var HabitButton = React.createClass({
     console.log('render props in HabitButton', this.props, this.state)
 
     return (
-
       <div>
         <button onClick={this.handleClick}>
           { this.getButtonTitle() }
@@ -153,14 +121,11 @@ var HabitButton = React.createClass({
           console.log("Form Button Click Error: ", err)
         } else {
           console.log("Form posted successfully")
-
           // this.setState({ habits: res.habits })
           self.handleClose()
         }
       })
-
     this.props.onAddHabit('edit')
-
   },
 
   handleClose: function() {
@@ -170,7 +135,6 @@ var HabitButton = React.createClass({
   handleClick: function() {
     this.props.onAddHabit('clicked')
     this.setState({ modalOpen: true })
-
   }
 })
 
