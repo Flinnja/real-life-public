@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe HabitsController, type: :controller do
 
+
   describe "Create path" do
     before(:each) do
       sign_in FactoryGirl.create(:user, :valid)

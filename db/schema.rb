@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20151122214659) do
-
+ActiveRecord::Schema.define(version: 20151124002728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +29,17 @@ ActiveRecord::Schema.define(version: 20151122214659) do
   end
 
   add_index "habits", ["user_id"], name: "index_habits_on_user_id", using: :btree
+
+  create_table "needs", force: :cascade do |t|
+    t.integer  "goals_average"
+    t.integer  "diet_average"
+    t.integer  "exercise_average"
+    t.integer  "sleep_average"
+    t.integer  "social_average"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string   "activity"
