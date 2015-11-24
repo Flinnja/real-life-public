@@ -16,7 +16,7 @@ var HabitView = React.createClass({
       <div onClick={this.props.clickHandler}>
         {this.props.name}
         <HabitButton habit={this.props.habit} onAddHabit={this.props.onAddHabit} />
-        <HabitCanvas />
+        <HabitCanvas tasks={this.props.tasks} />
         <HabitNavHome />
         <HabitNavNeeds />
         <div>
