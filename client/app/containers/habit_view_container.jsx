@@ -16,10 +16,9 @@ var HabitViewContainer = React.createClass({
           console.log("componentWillMount error", err)
         } else {
           var habits = JSON.parse(res.text)
-          console.log("componentWillMount response: ", habits.length)
+          console.log("componentWillMount response: ", habits)
         }
       })
-
     // this.setState({ habitButton: HabitButtonStatus})
   },
 
@@ -31,11 +30,10 @@ var HabitViewContainer = React.createClass({
   },
 
   render: function () {
-    return <HabitView
+    return < HabitView
       { ...this.state}
       clickHandler={this.clickHandler}
-      onAddHabit={this.onAddHabit}
-    />
+      onAddHabit={this.onAddHabit} />
   },
 
   clickHandler: function () {

@@ -13,6 +13,8 @@ var HabitView = React.createClass({
     var tasks = this.props.tasks || []
 
     console.log('props in HabitView', this.props)
+    console.log('tasks', this.props.tasks)
+
 
     return(
       <div onClick={this.props.clickHandler}>
