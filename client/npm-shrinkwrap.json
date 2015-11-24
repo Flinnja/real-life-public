@@ -202,6 +202,11 @@
       "from": "async-foreach@>=0.1.3 <0.2.0",
       "resolved": "https://registry.npmjs.org/async-foreach/-/async-foreach-0.1.3.tgz"
     },
+    "attach-dom-events": {
+      "version": "1.0.0",
+      "from": "attach-dom-events@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/attach-dom-events/-/attach-dom-events-1.0.0.tgz"
+    },
     "autoprefixer-core": {
       "version": "5.2.1",
       "from": "autoprefixer-core@>=5.2.1 <6.0.0",
@@ -913,6 +918,11 @@
         }
       }
     },
+    "dom-events": {
+      "version": "0.1.1",
+      "from": "dom-events@>=0.1.1 <0.2.0",
+      "resolved": "https://registry.npmjs.org/dom-events/-/dom-events-0.1.1.tgz"
+    },
     "dom-walk": {
       "version": "0.1.1",
       "from": "dom-walk@>=0.1.0 <0.2.0",
@@ -954,6 +964,11 @@
       "version": "1.1.1",
       "from": "ee-first@1.1.1",
       "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
+    },
+    "element-class": {
+      "version": "0.2.2",
+      "from": "element-class@>=0.2.0 <0.3.0",
+      "resolved": "https://registry.npmjs.org/element-class/-/element-class-0.2.2.tgz"
     },
     "engine.io": {
       "version": "1.5.4",
@@ -1269,6 +1284,11 @@
       "version": "1.1.0",
       "from": "events@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/events/-/events-1.1.0.tgz"
+    },
+    "exenv": {
+      "version": "1.2.0",
+      "from": "exenv@1.2.0",
+      "resolved": "https://registry.npmjs.org/exenv/-/exenv-1.2.0.tgz"
     },
     "exit-hook": {
       "version": "1.1.1",
@@ -4261,6 +4281,28 @@
       "from": "react-hot-api@>=0.4.5 <0.5.0",
       "resolved": "https://registry.npmjs.org/react-hot-api/-/react-hot-api-0.4.7.tgz"
     },
+    "react-layer-mixin": {
+      "version": "0.2.1",
+      "from": "react-layer-mixin@*",
+      "resolved": "https://registry.npmjs.org/react-layer-mixin/-/react-layer-mixin-0.2.1.tgz"
+    },
+    "react-modal": {
+      "version": "0.6.1",
+      "from": "react-modal@*",
+      "resolved": "https://registry.npmjs.org/react-modal/-/react-modal-0.6.1.tgz"
+    },
+    "react-modal-component": {
+      "version": "1.0.9",
+      "from": "react-modal-component@*",
+      "resolved": "https://registry.npmjs.org/react-modal-component/-/react-modal-component-1.0.9.tgz",
+      "dependencies": {
+        "react": {
+          "version": "0.13.3",
+          "from": "react@>=0.13.1 <0.14.0",
+          "resolved": "https://registry.npmjs.org/react/-/react-0.13.3.tgz"
+        }
+      }
+    },
     "read-file-stdin": {
       "version": "0.2.0",
       "from": "read-file-stdin@>=0.2.0 <0.3.0",
@@ -4544,6 +4586,11 @@
       "from": "sass-loader@>=1.0.2 <2.0.0",
       "resolved": "https://registry.npmjs.org/sass-loader/-/sass-loader-1.0.4.tgz"
     },
+    "select-parent": {
+      "version": "1.0.1",
+      "from": "select-parent@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/select-parent/-/select-parent-1.0.1.tgz"
+    },
     "semver": {
       "version": "5.1.0",
       "from": "semver@>=2.0.0 <3.0.0||>=3.0.0 <4.0.0||>=4.0.0 <5.0.0||>=5.0.0 <6.0.0",
@@ -4615,6 +4662,18 @@
       "version": "0.2.0",
       "from": "simple-is@>=0.2.0 <0.3.0",
       "resolved": "https://registry.npmjs.org/simple-is/-/simple-is-0.2.0.tgz"
+    },
+    "simple-react-modal": {
+      "version": "0.4.7",
+      "from": "simple-react-modal@*",
+      "resolved": "https://registry.npmjs.org/simple-react-modal/-/simple-react-modal-0.4.7.tgz",
+      "dependencies": {
+        "react": {
+          "version": "0.13.3",
+          "from": "react@>=0.13.3 <0.14.0",
+          "resolved": "https://registry.npmjs.org/react/-/react-0.13.3.tgz"
+        }
+      }
     },
     "slash": {
       "version": "1.0.0",
@@ -4966,6 +5025,11 @@
       "version": "0.5.0",
       "from": "sync-exec@>=0.5.0 <0.6.0",
       "resolved": "https://registry.npmjs.org/sync-exec/-/sync-exec-0.5.0.tgz"
+    },
+    "synthetic-dom-events": {
+      "version": "0.1.1",
+      "from": "synthetic-dom-events@0.1.1",
+      "resolved": "https://registry.npmjs.org/synthetic-dom-events/-/synthetic-dom-events-0.1.1.tgz"
     },
     "tapable": {
       "version": "0.1.9",
