@@ -1,6 +1,7 @@
 import React from 'react'
 
 var HabitCanvas = React.createClass({
+
   render: function() {
     var tasksGrid = this.getTasksGrid()
 
@@ -33,23 +34,40 @@ var HabitCanvas = React.createClass({
       alignItems: 'flex-start'
     }
 
-    return <div style={towerStyle}>
-      { tasks.map(this.renderBlock) }
-    </div>
+    return (
+      <div style={towerStyle}>
+        { tasks.map(this.renderBlock) }
+      </div>
+    )
   },
 
   renderBlock: function (task) {
-    return <div className="block">
-      { task.activity }
-    </div>
+    return (
+      <div className="block">
+        { task.activity }
+      </div>
+    )
   },
 
   getTasksGrid: function () {
     var tasksGrid = []
+    var towerArray = []
+
     this.props.tasks.forEach(function (task) {
-      // TODO implement properly
-      tasksGrid.push([task])
+      if (task.status == 'p') {
+        // if task status is 'p', add it to tower array
+        towerArray.push(task.status)
+      } else if (task.status == 'y') {
+        // if task status is 'y', add it to towerArray
+        towerArray.push(task.status)
+      } else if (task.status == 'n') {
+        // if task status is 'n', make a new towerArray or something?
+        towerArray.push(task.status)
+        tasksGrid.push(towerArray)
+        towerArray = []
+      }
     })
+    tasksGrid.push(towerArray)
     return tasksGrid
   }
 })
