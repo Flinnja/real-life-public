@@ -110,20 +110,37 @@ var HabitButton = React.createClass({
     var self = this
     e.preventDefault()
     var formData = this.parseFormInput(e)
-    request
-      .post('/habits')
-      .send(formData)
-      .set('Accept', 'application/json')
-      .end(function(err, res){
-        if (err) {
-          alert("There is something wrong with your form, please try again")
-          console.log("Form Button Click Error: ", err)
-        } else {
-          console.log("Form posted successfully")
-          // this.setState({ habits: res.habits })
-          self.handleClose()
-        }
-      })
+
+    if (this.props.habit) {
+      request
+        .patch('/habits/' + this.props.habit.id)
+        .send(formData)
+        .set('Accept', 'application/json')
+        .end(function(err, res){
+          if (err) {
+            alert("There is something wrong with your form, please try again")
+            console.log("Form Button Click Error: ", err)
+          } else {
+            console.log("Form updated successfully")
+            self.handleClose()
+          }
+        })
+    } else {
+      request
+        .post('/habits')
+        .send(formData)
+        .set('Accept', 'application/json')
+        .end(function(err, res){
+          if (err) {
+            alert("There is something wrong with your form, please try again")
+            console.log("Form Button Click Error: ", err)
+          } else {
+            console.log("Form posted successfully")
+            // this.setState({ habits: res.habits })
+            self.handleClose()
+          }
+        })
+    }
     this.props.onAddHabit('edit')
   },
 
