@@ -2,7 +2,8 @@ class HabitsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @habits = Habit.all
+    @habit = current_user.last_habit
+    @tasks =  @habit ? @habit.tasks_in_ascending_date_order : Array.new()
     respond_to do |format|
       format.html {render "habits/index.html.erb"}
       format.json {render json: @habits }
@@ -18,7 +19,6 @@ class HabitsController < ApplicationController
 
   def show
     @habit = Habit.find(params[:id])
-
     respond_to do |format|
       format.html
       format.json {render json: @habit }
@@ -26,9 +26,8 @@ class HabitsController < ApplicationController
   end
 
   def create
-    @habit = Habit.create(habit_params)
-    if(@habit.valid?)
-      Scheduler.schedule_single(@habit)
+    @habit = Habit.new(habit_params)
+    if HabitService.create(habit: @habit, actor: current_user)
       redirect_to habits_path
     else
       flash[:alert] = "ERROR: There were one or more problems with your new habit."
@@ -40,7 +39,7 @@ class HabitsController < ApplicationController
     @habit = Habit.find(params[:id])
     if(@habit.update(habit_params))
       flash[:notice] = "Your habit has been updated."
-      redirect_to habit_path(@habit)
+      render json: @habit
     else
       flash[:alert] = "ERROR: Your habit update was unsuccessful."
       render :edit

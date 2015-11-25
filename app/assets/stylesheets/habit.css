@@ -1,0 +1,56 @@
+/*Habits
+------------------------------------*/
+
+#habitCanvas {
+  background-size: contain;
+  margin: auto;
+  /*background-repeat: no-repeat;*/
+  background-image: url('./canvas.gif');
+  border-color: #1F203C;
+  border-radius: 20px;
+  border-width: 10px;
+  width: 35%;
+  height: 0;
+  padding-top: 49.56%;
+  /*padding-top = 708(image height) / 500(image width) * width% */
+}
+
+#habitButton {
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 20px;
+  border-style: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
+  text-decoration: none;
+  color: #FEFDFB;
+  background-color: #DD4643;
+  box-shadow: inset 0 0 0 1px #8F2D2B,inset 0 5px 30px #8F2D2B;
+  cursor: pointer;
+}
+
+.modal-header {
+  background: #002B36;
+  color: #FEFDFB;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  padding-top: 10px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.modal-body {
+  background: #002B36;
+  color: #FEFDFB;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  padding-top: 10px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+}

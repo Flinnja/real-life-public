@@ -1,0 +1,22 @@
+<!-- <nav class="nav navbar-form">
+</nav>
+ -->
+<% content_for :left_sidebar do %>
+  <%= link_to "Join", new_user_registration_path %>
+<% end %>
+<% content_for :right_sidebar do %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+
+<div class="feature_box">
+  <h1>Real Life</h1>
+  <h2>Insert witty slogan here</h2>
+</div>
+<div class="feature_box">
+  <h2>Choose Your Avatar</h2>
+  <div id="promo_avatar">
+    <%= image_tag('avatar2_closeup.jpeg') %>
+    <%= image_tag('avatar4.jpeg') %>
+    <%= image_tag('avatar3_laugh.jpeg') %>
+  </div>
+</div>
