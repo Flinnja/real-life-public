@@ -1,0 +1,36 @@
+/*Habits
+------------------------------------*/
+
+#habit {
+  margin-top: 100px;
+}
+
+.nav_buttons {
+
+}
+
+#home_button {
+  width: 75px;
+  margin: 50px 50px 100px 100px;
+  padding: 15px;
+  border-radius: 5px;
+  display: inline;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  color: #FEFDFB;
+  background-color: #DD4643;
+}
+
+#needs_button {
+  width: 75px;
+  margin: 50px 50px 100px 50px;
+  padding: 15px;
+  border-radius: 5px;
+  display: inline;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  color: #FEFDFB;
+  background-color: #DD4643;
+}
