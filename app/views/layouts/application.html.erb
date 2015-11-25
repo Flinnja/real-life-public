@@ -9,7 +9,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
+
+<nav class="sidebar" id="left_nav">
+  <%= yield :left_sidebar %>
+</nav>
+
+<nav class="sidebar" id="right_nav">
+  <%= yield :right_sidebar %>
+</nav>
+
+<nav class="top_nav">
   <% if user_signed_in? %>
     Logged in as <strong><%= current_user.email %></strong>.
     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -17,10 +26,14 @@
   <% end %>
 </nav>
 
+
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
-<%= javascript_include_tag 'application' %>
+<div class="main">
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+</div>
+
 </body>
 </html>

@@ -1,6 +1,12 @@
-<nav class="nav navbar-form">
+<!-- <nav class="nav navbar-form">
 </nav>
-
+ -->
+<% content_for :left_sidebar do %>
+  <%= link_to "Join", new_user_registration_path %>
+<% end %>
+<% content_for :right_sidebar do %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>
 
 <div class="feature_box">
   <h1>Real Life</h1>
