@@ -15,12 +15,18 @@ h1 {
 h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
+  font-size: 3em;
   margin: 10px;
 }
 
 h3 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-size: 1.8em;
+  font-weight: 400;
+}
+
+.slogan {
+  font-size: 1.5em;
 }
 
 .login_button {
@@ -32,4 +38,12 @@ a {
   text-decoration: underline;
   color: #FEFDFB;
   font-weight: normal;
+}
+
+.notice {
+  font-weight: 400;
+}
+
+.alert {
+  font-weight: 400;
 }

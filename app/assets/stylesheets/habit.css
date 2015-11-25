@@ -1,11 +1,8 @@
-/*Habits
-------------------------------------*/
-
 #habitCanvas {
   background-size: contain;
   margin: auto;
   /*background-repeat: no-repeat;*/
-  background-image: url('./canvas.gif');
+  background-image: url('./canvas.png');
   border-color: #1F203C;
   border-radius: 20px;
   border-width: 10px;
@@ -49,6 +46,7 @@
   color: #FEFDFB;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
+  font-size: 0.9em;
   padding-top: 10px;
   display: block;
   text-align: left;

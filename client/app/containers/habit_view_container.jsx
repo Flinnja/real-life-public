@@ -6,7 +6,6 @@ import HabitView from '../components/habit_view'
 var HabitViewContainer = React.createClass({
 
   componentWillMount: function () {
-    // var HabitButtonStatus = this.props.habits.length > 0 ? 'edit' : 'add'
     request
       .get('/habits')
       .set('Accept', 'application/json')
@@ -17,26 +16,19 @@ var HabitViewContainer = React.createClass({
           var habits = JSON.parse(res.text)
         }
       })
-    // this.setState({ habitButton: HabitButtonStatus})
   },
 
   getInitialState: function () {
     return Object.assign({}, this.props, {
-      name: 'Simon',
-      showImg: false
+      name: ''
     })
   },
 
   render: function () {
     return < HabitView
       { ...this.state}
-      clickHandler={this.clickHandler}
       onAddHabit={this.onAddHabit}
       resetHabitState={this.resetHabitState} />
-  },
-
-  clickHandler: function () {
-    this.setState({ showImg: !this.state.showImg })
   },
 
   onAddHabit: function (status) {

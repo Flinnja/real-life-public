@@ -5,7 +5,6 @@ import request from 'superagent'
 var LayeredComponentMixin = require('react-layer-mixin')
 var Modal = require('react-awesome-modal')
 
-
 const customStyles = {
   content : {
     top                   : '50%',
@@ -18,7 +17,6 @@ const customStyles = {
 }
 
 var HabitButton = React.createClass({
-
 
   getInitialState: function() {
     return { modalOpen: false }
@@ -45,24 +43,24 @@ var HabitButton = React.createClass({
           <div className="modal-body">
             <form>
               <div>
-                <label htmlFor="name">Name: </label>
+                <label htmlFor="name"><strong>Name: </strong></label>
                 <input type="text" id="name" defaultValue={this.getHabitProps().name} />
               </div>
               <div>
-                <label htmlFor="description">Description: </label>
+                <label htmlFor="description"><strong>Description: </strong></label>
                 <input type="text" id="description" defaultValue={this.getHabitProps().description} />
               </div>
               <div>
-                <label htmlFor="start-date">Start Date: </label>
+                <label htmlFor="start-date"><strong>Start Date: </strong></label>
                 <input type="date" id="start-date" defaultValue={this.getHabitProps().start_date} />
               </div>
               <div>
-                <label htmlFor="end-date">End Date: </label>
+                <label htmlFor="end-date"><strong>End Date: </strong></label>
                 <input type="date" id="end-date" defaultValue={this.getHabitProps().end_date} />
                 <label htmlFor="end-date"> (optional)</label>
               </div>
               <div>
-                <label htmlFor="frequency">Frequency: Every </label>
+                <label htmlFor="frequency"><strong>Frequency:</strong> Every </label>
                 <input type="integer" id="frequency" defaultValue={this.getHabitProps().frequency} />
                 <label htmlFor="frequency"> days</label>
               </div>
@@ -138,10 +136,6 @@ var HabitButton = React.createClass({
           }
         })
     }
-
-
-    this.props.onAddHabit('edit')
-
   },
 
   handleClose: function() {

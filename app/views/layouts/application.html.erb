@@ -28,11 +28,9 @@
     <% end %>
   </nav>
 
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <div class="main">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </div>
