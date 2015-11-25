@@ -21,3 +21,47 @@ nav ul {
 nav li {
   display: inline-block;
 }
+
+.left_nav{
+/*  width: 50px;*/
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+  position: fixed;
+  left: -82px;
+  top: 50%;
+  transform: rotate(-90deg);
+  transform-origin: top 0;
+}
+
+.right_nav{
+/*  width: 50px;*/
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  position: fixed;
+  right: -82px;
+  top: 50%;
+  transform: rotate(90deg);
+  transform-origin: top 0;
+}
+
+nav a{
+  display: block;
+  text-align: center;
+  min-width: 200px;
+  padding: 15px;
+  /*margin: 30px;*/
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #DD4643;
+
+}
+
+.main{
+  margin: 0 2%;
+}
