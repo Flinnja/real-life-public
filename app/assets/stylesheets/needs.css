@@ -1,6 +1,7 @@
 .rating_container {
   display: none;
-  background-color: #f3f2f2;
+  background-color: #FEFDFB;
+  color: #002B36;
   width: 450px;
   height: auto;
   margin: 0 100px 25px 0;
@@ -9,29 +10,25 @@
 }
 
 .status_bar {
-  background-color: #fff;
+  background-color: #DD4643;
   width: 450px;
   height: 50px;
 
 }
 
-/*#needs0 {
-  display: inline;
-}*/
 
 .needs {
   width: 500px;
   height: auto;
-  border: 5px solid red;
 }
 
 #needs_format {
   width: 500px;
   height: auto;
   margin: 100px 0 0 30%;
-  border: 5px solid green;
 }
 
-h2 {
+h2 .title0 {
+  color: ;
   margin-left: 30%;
 }
