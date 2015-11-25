@@ -5,6 +5,7 @@ import request from 'superagent'
 var LayeredComponentMixin = require('react-layer-mixin')
 var Modal = require('react-awesome-modal')
 
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -18,15 +19,14 @@ const customStyles = {
 
 var HabitButton = React.createClass({
 
+
   getInitialState: function() {
     return { modalOpen: false }
   },
 
   render: function() {
-    console.log('render props in HabitButton', this.props, this.state)
-
     return (
-      <div>
+      <div id="habitButton">
         <button onClick={this.handleClick}>
           { this.getButtonTitle() }
         </button>
@@ -107,6 +107,7 @@ var HabitButton = React.createClass({
     var self = this
     e.preventDefault()
     var formData = this.parseFormInput(e)
+
     if (this.props.habit) {
       request
         .patch('/habits/' + this.props.habit.id)
@@ -114,10 +115,9 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
-            alert("There is something wrong with your form, please try again")
-            console.log("Form Button Click Error: ", err)
           } else {
-            console.log("Form updated successfully")
+            var habit = JSON.parse(res.text)
+            self.props.resetHabitState(habit)
             self.handleClose()
           }
         })
@@ -128,16 +128,17 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
-            alert("There is something wrong with your form, please try again")
-            console.log("Form Button Click Error: ", err)
           } else {
-            console.log("Form posted successfully")
-            // this.setState({ habits: res.habits })
+            var habit = JSON.parse(res.text)
+            self.props.resetHabitState(habit)
             self.handleClose()
           }
         })
     }
+
+
     this.props.onAddHabit('edit')
+
   },
 
   handleClose: function() {

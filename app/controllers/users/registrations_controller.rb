@@ -10,6 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    user = User.find_by_email(sign_up_params[:email])
+    if(User.find_by_email(sign_up_params[:email]))
+      UserNeedsService.create_needs(actor: user)
+    end
   end
 
   # GET /resource/edit

@@ -1,0 +1,63 @@
+
+/* General
+------------------------------*/
+/** {
+  background: #002b36;
+  color: #FEFDFB;
+}*/
+
+body {
+  background: #002B36;
+  /*background-image: linear-gradient(to left, #002b36 , #073642 );*/
+  color: #FEFDFB;
+  font-family: 'Valera Round', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5em;
+  margin: 10px;
+}
+
+h2 {
+  font-family: 'Valera Round', sans-serif;
+  margin: 10px;
+}
+
+h3 {
+  font-family: 'Valera Round', sans-serif;
+}
+
+.button{
+  margin: 5px;
+  background: #DD4643;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.button:hover{
+  background: #CC3532;
+}
+
+a {
+  text-decoration: underline;
+  color: #FEFDFB;
+  font-weight: normal;
+}
+
+#promo_avatar {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#promo_avatar img{
+  margin: 10px;
+  border-radius: 10px;
+}
+
