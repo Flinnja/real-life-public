@@ -19,7 +19,6 @@ class HabitsController < ApplicationController
 
   def show
     @habit = Habit.find(params[:id])
-
     respond_to do |format|
       format.html
       format.json {render json: @habit }
@@ -38,7 +37,6 @@ class HabitsController < ApplicationController
 
   def update
     @habit = Habit.find(params[:id])
-    puts @habit.inspect
     if(@habit.update(habit_params))
       flash[:notice] = "Your habit has been updated."
       render json: @habit
