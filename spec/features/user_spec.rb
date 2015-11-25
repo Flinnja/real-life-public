@@ -58,7 +58,7 @@ RSpec.feature 'User features', type: :feature do
       visit new_user_registration_path
       complete_sign_up_form(@user_attrs)
       fill_in 'Password confirmation', with: "nonsenseuhoh"
-      click_button 'Sign up'
+      click_button 'Sign Up'
       expect(page).to have_content("Password confirmation doesn't match Password")
     end
     it 'will not allow a user to update without current password' do
@@ -91,7 +91,7 @@ end
 
 def sign_up(user_attrs)
   complete_sign_up_form(user_attrs)
-  click_button 'Sign up'
+  click_button 'Sign Up'
 end
 
 def complete_sign_up_form(user_attrs)
