@@ -8,10 +8,6 @@ create table html
       print row 7 times
 */
 
-var moment = require('moment');
-moment().format();
-
-
   //modify the Date class to create a new method called addDays. Pass in an integer
   //to add days to the current date.
   var date = new Date();
