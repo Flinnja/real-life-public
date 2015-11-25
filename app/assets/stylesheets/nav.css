@@ -59,6 +59,11 @@ nav li {
   cursor: pointer;
 }
 
+.sidebar a:hover{
+  background-color: #CC3532
+}
+
+
 .main{
   margin: 0 75px;
 }

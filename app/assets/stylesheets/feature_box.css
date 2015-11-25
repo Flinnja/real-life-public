@@ -8,7 +8,7 @@
 }
 
 .buttons{
-  margin-top: 10%;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -21,8 +21,12 @@
   font-size: 2em;
   text-decoration: none;
   color: #fff;
-  background-color: #B58900;
+  background-color: #DD4643;
   display: inline;
+}
+
+.home_nav_button:hover{
+  background-color: #CC3532;
 }
 
 #promo_avatar {
