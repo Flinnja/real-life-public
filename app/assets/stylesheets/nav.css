@@ -55,7 +55,10 @@ nav li {
   text-decoration: none;
   color: #fff;
   background-color: #DD4643;
+}
 
+.sidebar a:hover{
+  background-color: #CC3532;
 }
 
 .main{

@@ -29,14 +29,35 @@ h3 {
   font-family: 'Valera Round', sans-serif;
 }
 
-.login_button {
-  padding: 10px;
-  margin-top: 15px;
+.button{
+  margin: 5px;
+  background: #DD4643;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.button:hover{
+  background: #CC3532;
 }
 
 a {
   text-decoration: underline;
   color: #FEFDFB;
   font-weight: normal;
+}
+
+#promo_avatar {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#promo_avatar img{
+  margin: 10px;
+  border-radius: 10px;
 }
 
