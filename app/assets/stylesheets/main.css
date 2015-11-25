@@ -1,0 +1,42 @@
+
+/* General
+------------------------------*/
+/** {
+  background: #002b36;
+  color: #FEFDFB;
+}*/
+
+body {
+  background: #002B36;
+  /*background-image: linear-gradient(to left, #002b36 , #073642 );*/
+  color: #FEFDFB;
+  font-family: 'Valera Round', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5em;
+  margin: 10px;
+}
+
+h2 {
+  font-family: 'Valera Round', sans-serif;
+  margin: 10px;
+}
+
+h3 {
+  font-family: 'Valera Round', sans-serif;
+}
+
+.login_button {
+  padding: 10px;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: underline;
+  color: #FEFDFB;
+  font-weight: normal;
+}
+

@@ -1,0 +1,33 @@
+
+/* Sign Up Page
+------------------------------*/
+
+.container {
+  width: 50%;
+  margin-top: 50px;
+  margin-left: 40%;
+}
+
+.sign_up_page {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.field {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+
+/*Sign in page
+------------------------------------*/
+
+.sign_up_form {
+  margin: auto;
+  margin-top: 5%;
+  width: 25%;
+}
+
+
+
+
