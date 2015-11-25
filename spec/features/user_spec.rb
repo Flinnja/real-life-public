@@ -13,7 +13,7 @@ RSpec.feature 'User features', type: :feature do
     it 'user can update their details' do
       visit new_user_registration_path
       sign_up(@user_attrs)
-      click_link 'Edit profile'
+      click_link 'Edit Profile'
       fill_in 'Name', with: "Banana Bob"
       fill_in 'Current password', with: @user_attrs[:password]
       click_button 'Update'
@@ -38,7 +38,7 @@ RSpec.feature 'User features', type: :feature do
     it 'user can delete their account' do
       visit new_user_registration_path
       sign_up(@user_attrs)
-      click_link 'Edit profile'
+      click_link 'Edit Profile'
       click_button 'Cancel my account'
       #poltergeist automatically accepts js alert box
       expect(page).to have_content('successfully cancelled')
@@ -64,7 +64,7 @@ RSpec.feature 'User features', type: :feature do
     it 'will not allow a user to update without current password' do
       visit new_user_registration_path
       sign_up(@user_attrs)
-      click_link 'Edit profile'
+      click_link 'Edit Profile'
       fill_in 'Name', with: 'Naughty Name'
       click_button 'Update'
       expect(page).to have_content("Current password can't be blank")
