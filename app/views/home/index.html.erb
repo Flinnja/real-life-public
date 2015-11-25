@@ -1,1 +1,6 @@
-index.html.erb
+<% content_for :left_sidebar do %>
+  <%= link_to "Needs", needs_path %>
+<% end %>
+<% content_for :right_sidebar do %>
+  <%= link_to "Habits", habits_path %>
+<% end %>
