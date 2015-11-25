@@ -8,9 +8,9 @@ create table html
       print row 7 times
 */
 
+var moment = require('moment');
+moment().format();
 
-
-$(document).ready( function() {
 
   //modify the Date class to create a new method called addDays. Pass in an integer
   //to add days to the current date.
@@ -44,6 +44,12 @@ $(document).ready( function() {
       '</td>' +
     '</tr>';
 
+function formatDate(date1) {
+  var date2 = date1.toString();
+  date2 = date2.substr(0, 15);
+  return date2;
+}
+
 //print rating fields under each status bar.
 //add extra day to the current date for each loop.
 function printRatingBox() {
@@ -51,20 +57,16 @@ function printRatingBox() {
   $('.rating_container').html(ratingTable);
   for (var i = 0; i < 7; i++) {
     date = new Date();
-    console.log(date);
     $('.rating_box').append(ratingRows);
-    $('.rating_date').html(date.addDays(i));
+    $('.rating_date').html(formatDate(date.addDays(i)) );
     $('td.rating_date').removeAttr('class');
   }
 }
 
-// var testDate = moment();
-// console.log()
+
 
 printRatingBox();
 
-
-//add html, then remove class
 
 
 //add click listener to all status bars. When a particular status bar is
@@ -72,9 +74,6 @@ printRatingBox();
  $('div.status_bar').on('click', function() {
     $(this).next().toggle( "fast" );
   });
-
-});
-
 
 
 
