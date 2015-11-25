@@ -5,8 +5,6 @@ var HabitCanvas = React.createClass({
   render: function() {
     var tasksGrid = this.getTasksGrid()
 
-    console.log("tasksGrid", tasksGrid)
-
     var canvasStyle = {
       height: '100%',
       width: '100%',
@@ -44,7 +42,7 @@ var HabitCanvas = React.createClass({
   renderBlock: function (task) {
     return (
       <div className="block">
-        { task.activity }
+        { task.status }
       </div>
     )
   },
@@ -56,13 +54,13 @@ var HabitCanvas = React.createClass({
     this.props.tasks.forEach(function (task) {
       if (task.status == 'p') {
         // if task status is 'p', add it to tower array
-        towerArray.push(task.status)
+        towerArray.push(task)
       } else if (task.status == 'y') {
         // if task status is 'y', add it to towerArray
-        towerArray.push(task.status)
+        towerArray.push(task)
       } else if (task.status == 'n') {
         // if task status is 'n', make a new towerArray or something?
-        towerArray.push(task.status)
+        towerArray.push(task)
         tasksGrid.push(towerArray)
         towerArray = []
       }

@@ -27,12 +27,8 @@ class HabitsController < ApplicationController
   end
 
   def create
-    @habit = Habit.create(habit_params)
-    if(@habit.valid?)
-      @habit.user = current_user
-      @habit.save
-      puts @habit.inspect
-      Scheduler.schedule_single(@habit)
+    @habit = Habit.new(habit_params)
+    if HabitService.create(habit: @habit, actor: current_user)
       redirect_to habits_path
     else
       flash[:alert] = "ERROR: There were one or more problems with your new habit."
@@ -42,9 +38,10 @@ class HabitsController < ApplicationController
 
   def update
     @habit = Habit.find(params[:id])
+    puts @habit.inspect
     if(@habit.update(habit_params))
       flash[:notice] = "Your habit has been updated."
-      redirect_to habit_path(@habit)
+      render json: @habit
     else
       flash[:alert] = "ERROR: Your habit update was unsuccessful."
       render :edit

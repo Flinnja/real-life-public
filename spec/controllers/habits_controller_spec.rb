@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe HabitsController, type: :controller do
 
+
   describe "Create path" do
     before(:each) do
       sign_in FactoryGirl.create(:user, :valid)
@@ -40,8 +41,8 @@ RSpec.describe HabitsController, type: :controller do
         put :update, id: habit.id, habit: valid_update_attr
         habit.reload
       end
-      it "redirects to the habits show page" do
-        expect(response).to redirect_to(habit_path(habit))
+      it "returns HTTP resonse 200" do
+        expect(response.status).to eq(200)
       end
       it "sets a flash notice" do
         expect(flash[:notice]).to include('updated')
