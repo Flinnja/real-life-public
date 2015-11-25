@@ -26,7 +26,7 @@ var HabitButton = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div id="habitButton">
         <button onClick={this.handleClick}>
           { this.getButtonTitle() }
         </button>
