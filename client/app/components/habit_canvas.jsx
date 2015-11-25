@@ -39,10 +39,12 @@ var HabitCanvas = React.createClass({
     )
   },
 
+
+
   renderBlock: function (task) {
     return (
       <div className="block">
-        { task.status }
+        <img src={`assets/${task.status}.png`}/>
       </div>
     )
   },

@@ -12,14 +12,16 @@ var HabitView = React.createClass({
     var tasks = this.props.tasks || []
 
     return(
-      <div onClick={this.props.clickHandler}>
-        {this.props.name}
-        <HabitButton habit={this.props.habit} onAddHabit={this.props.onAddHabit} resetHabitState={this.props.resetHabitState} />
-        <HabitCanvas tasks={tasks} />
-        <HabitNavHome />
-        <HabitNavNeeds />
-        <div>
-          { this.props.showImg ? img : null}
+      <div className="feature_box">
+        <div onClick={this.props.clickHandler}>
+          {this.props.name}
+          <HabitButton habit={this.props.habit} onAddHabit={this.props.onAddHabit} resetHabitState={this.props.resetHabitState} />
+          <div id="habitCanvas">
+            <HabitCanvas tasks={tasks} />
+          </div>
+          <div>
+            { this.props.showImg ? img : null}
+          </div>
         </div>
       </div>
     )
