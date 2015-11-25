@@ -1,36 +1,21 @@
 /*Habits
 ------------------------------------*/
 
-#habit {
-  margin-top: 100px;
+#habitCanvas {
+  background-size: contain;
+  margin: auto;
+  /*background-repeat: no-repeat;*/
+  background-image: url('./canvas.gif');
+  width: 25%;
+  height: 0;
+  padding-top: 35.4%;
+  /*padding-top = 708(image height) / 500(image width) * width% */
 }
 
-.nav_buttons {
-
+#habitDiv {
+  /*margin: auto;*/
 }
 
-#home_button {
-  width: 75px;
-  margin: 50px 50px 100px 100px;
-  padding: 15px;
-  border-radius: 5px;
-  display: inline;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
-  text-decoration: none;
-  color: #FEFDFB;
-  background-color: #DD4643;
-}
-
-#needs_button {
-  width: 75px;
-  margin: 50px 50px 100px 50px;
-  padding: 15px;
-  border-radius: 5px;
-  display: inline;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
-  text-decoration: none;
-  color: #FEFDFB;
-  background-color: #DD4643;
+#habitButton {
+  margin: auto;
 }
