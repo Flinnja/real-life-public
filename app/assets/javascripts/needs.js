@@ -10,41 +10,69 @@ create table html
 
 $(document).ready( function() {
   var date = new Date();
-  var need = $(this).attr("id");
+  Date.prototype.addDays = function(days) {
+      this.setDate(this.getDate() + parseInt(days));
+      return this;
+  };
 
-  var ratingTable1 =
-    '<div id="goals_rating_box" class="rating_box">' +
-    '<table id="rating_box_table">';
-  var ratingTable2 =
-    '</table>' +
-    '</div>';
+  var ratingTable =
+      '<table class="rating_box">' +
+        '<tr>' +
+          '<td>' +
+            '<p><b>Date</b></p>' +
+          '</td>' +
+          '<td>' +
+            '<p><b>Rating</b></p>' +
+          '</td>' +
+        '</tr>' +
+      '</table>';
 
   var ratingRows =
     '<tr>' +
-      '<td>' + date + '</td>' +
+      '<td></td>' +
       '<td>' +
-        '<%= form_for :need do |f| %>' +
-          '<p>Rating</p>' +
-          '<%= f.text_field :goals_average %>' +
-          '<%= f.submit %>' +
-        '<% end %>' +
+        '<form>' +
+        '<input type="text">' +
+        '<input type="submit">' +
+        '</form>' +
       '</td>' +
     '</tr>';
 
-var createRatingRows = "";
-
-
-function printRatingRows() {
-  for (i = 0; i < 7; i++) {
-    createRatingRows += ratingRows;
-    date += 1;
+  var j = 0;
+  function printRatingRows() {
+    var temp = "";
+    for (var i = 0; i < 7; i++) {
+      temp = temp.concat(ratingRows);
+    }
+    ratingRows = temp;
   }
-  return createRatingRows;
-}
 
-  $('.status_bar').on('click', function() {
-    $(this).html(
-      ratingTable1 + printRatingRows() + ratingTable2;
-    );
+  function printRatingBox() {
+    $('.rating_container').html(ratingTable);
+    $('.rating_box').append(ratingRows);
+  }
+
+// var nextColumn = "";
+//   function addDates() {
+//     $('.rating_box tr').first().next().
+//     nextColumn = $(this).next();
+//   }
+//     $('tr').next().html(date.addDays(1));
+//     j += 1;
+//   }
+
+
+  $('div.status_bar').on('click', function() {
+    $(this).next().toggle();
   });
+
+printRatingRows();
+printRatingBox();
+
 });
+
+
+
+
+
+
