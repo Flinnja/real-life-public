@@ -4,3 +4,10 @@
 <% content_for :right_sidebar do %>
   <%= link_to "Habits", habits_path %>
 <% end %>
+
+<div class="feature_box">
+  <h2 class="name_header"><%= current_user.name %></h2>
+  <div class="avatar">
+    <%= image_tag('avatar2_anxious.png') %>
+  </div>
+</div>

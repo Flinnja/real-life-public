@@ -1,0 +1,16 @@
+.name_header{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  margin: 10px;
+  text-align: center;
+}
+
+.avatar{
+  background-color: #DEEFE8;
+  height: auto;
+  width: 50%;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
