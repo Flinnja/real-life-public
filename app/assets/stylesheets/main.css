@@ -1,16 +1,8 @@
-
-/* General
-------------------------------*/
-/** {
-  background: #002b36;
-  color: #FEFDFB;
-}*/
-
 body {
   background: #002B36;
   /*background-image: linear-gradient(to left, #002b36 , #073642 );*/
   color: #FEFDFB;
-  font-family: 'Valera Round', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 300;
 }
 
@@ -21,12 +13,14 @@ h1 {
 }
 
 h2 {
-  font-family: 'Valera Round', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
   margin: 10px;
 }
 
 h3 {
-  font-family: 'Valera Round', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
 }
 
 .login_button {
@@ -39,4 +33,3 @@ a {
   color: #FEFDFB;
   font-weight: normal;
 }
-
