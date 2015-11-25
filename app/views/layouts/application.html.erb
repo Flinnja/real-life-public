@@ -3,20 +3,37 @@
 <head>
   <title>RealLife</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% end %>
+
+<nav class="sidebar" id="left_nav">
+  <%= yield :left_sidebar %>
+</nav>
+
+<nav class="sidebar" id="right_nav">
+  <%= yield :right_sidebar %>
+</nav>
+
+<nav class="top_nav">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% end %>
+</nav>
+
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
-<%= javascript_include_tag 'application' %>
+<div class="main">
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+</div>
+
 </body>
 </html>
