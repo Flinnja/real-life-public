@@ -22,31 +22,27 @@ nav li {
   display: inline-block;
 }
 
-.left_nav{
+.sidebar{
 /*  width: 50px;*/
   margin: 0;
   padding: 0;
   margin-right: 10px;
   position: fixed;
-  left: -82px;
   top: 50%;
+}
+#left_nav{
+  left: -84px;
   transform: rotate(-90deg);
   transform-origin: top 0;
 }
 
-.right_nav{
-/*  width: 50px;*/
-  margin: 0;
-  padding: 0;
-  margin-left: 10px;
-  position: fixed;
-  right: -82px;
-  top: 50%;
+#right_nav{
+  right: -91px;
   transform: rotate(90deg);
   transform-origin: top 0;
 }
 
-nav a{
+.sidebar a{
   display: block;
   text-align: center;
   min-width: 200px;

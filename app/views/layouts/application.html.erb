@@ -10,12 +10,12 @@
 </head>
 <body>
 
-<nav class="left_nav">
-  <%= link_to "Join", new_user_registration_path %>
+<nav class="sidebar" id="left_nav">
+  <%= yield :left_sidebar %>
 </nav>
 
-<nav class="right_nav">
-  <%= link_to "Log In", new_user_session_path %>
+<nav class="sidebar" id="right_nav">
+  <%= yield :right_sidebar %>
 </nav>
 
 <nav class="top_nav">
