@@ -30,7 +30,10 @@ var HabitButton = React.createClass({
         <button onClick={this.handleClick} id="habitButton">
           { this.getButtonTitle() }
         </button>
-        <Modal visible={this.state.modalOpen} style={customStyles}>
+        <Modal
+          visible={this.state.modalOpen}
+          style={customStyles}
+          effect="fadeInUp">
           <div className="modal-header">
             { this.getButtonTitle() }
             <a href="javascript: void 0;"

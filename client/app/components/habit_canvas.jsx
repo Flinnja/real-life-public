@@ -8,7 +8,7 @@ var HabitCanvas = React.createClass({
     var canvasStyle = {
       height: '100%',
       width: '100%',
-      paddingLeft: '10px',
+      paddingLeft: '20px',
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'nowrap',
