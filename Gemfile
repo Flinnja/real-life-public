@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'browserify-rails', '~> 1.0.1'
+
+gem 'react-rails', '~> 1.4.0'
+
 gem 'whenever', require: false
 
 gem 'devise'
@@ -18,14 +22,12 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'whenever', :require => false
+gem 'simplecov', require: false, group: :test
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -43,6 +45,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
   gem 'factory_girl_rails'
+
+  gem 'capybara'
+
+  gem 'poltergeist'
 end
 
 group :development do

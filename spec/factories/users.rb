@@ -3,7 +3,7 @@ FactoryGirl.define do
     trait :valid do
       email "valid@valid.com"
       password "iamapassword1A"
-      name "Flinn"
+      name "Banana Bill"
     end
     trait :invalid do
       email "notvalid"
