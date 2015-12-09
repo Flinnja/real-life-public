@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+#habitButton:hover{
+  background: #CC3532;
+}
+
 .modal-header {
   background: #002B36;
   color: #FEFDFB;
@@ -40,6 +44,7 @@
   text-align: center;
   text-decoration: none;
 }
+
 
 .modal-body {
   background: #002B36;

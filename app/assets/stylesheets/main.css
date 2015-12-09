@@ -10,6 +10,8 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 5em;
   margin: 10px;
+  text-align: center;
+  color: #FEFDFB;
 }
 
 h2 {
@@ -17,6 +19,7 @@ h2 {
   font-weight: 400;
   font-size: 3em;
   margin: 10px;
+  color: #FEFDFB;
 }
 
 h3 {
@@ -27,17 +30,24 @@ h3 {
 
 .slogan {
   font-size: 1.5em;
+  text-align: center;
+}
+
+.chooseAvatar {
+  text-align: center;
 }
 
 .button{
   margin: 5px;
   background: #DD4643;
   border-radius: 10px;
-  color: #fff;
+  color: #FEFDFB;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   border: none;
+  box-shadow: inset 0 0 0 1px #8F2D2B,inset 0 5px 30px #8F2D2B;
+  cursor: pointer;
 }
 
 .button:hover{

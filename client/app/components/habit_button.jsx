@@ -46,28 +46,37 @@ var HabitButton = React.createClass({
                 <label htmlFor="name"><strong>Name: </strong></label>
                 <input type="text" id="name" defaultValue={this.getHabitProps().name} />
               </div>
+              <br />
               <div>
                 <label htmlFor="description"><strong>Description: </strong></label>
                 <input type="text" id="description" defaultValue={this.getHabitProps().description} />
               </div>
+              <br />
               <div>
                 <label htmlFor="start-date"><strong>Start Date: </strong></label>
                 <input type="date" id="start-date" defaultValue={this.getHabitProps().start_date} />
               </div>
+              <br />
               <div>
                 <label htmlFor="end-date"><strong>End Date: </strong></label>
                 <input type="date" id="end-date" defaultValue={this.getHabitProps().end_date} />
                 <label htmlFor="end-date"> (optional)</label>
               </div>
+              <br />
               <div>
                 <label htmlFor="frequency"><strong>Frequency:</strong> Every </label>
                 <input type="integer" id="frequency" defaultValue={this.getHabitProps().frequency} />
                 <label htmlFor="frequency"> days</label>
               </div>
-              <button onClick={this.handleFormButtonClick}>
+              <br />
+              <button className="needsSumbitButton" onClick={this.handleFormButtonClick}>
                 Submit
               </button>
-            </form>
+              <br />
+              <br />
+              <br />
+              <br />
+              </form>
           </div>
         </Modal>
       </div>
@@ -116,6 +125,7 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
+            self.handleClose()
           } else {
             var habit = JSON.parse(res.text)
             self.props.resetHabitState(habit)
@@ -129,6 +139,7 @@ var HabitButton = React.createClass({
         .set('Accept', 'application/json')
         .end(function(err, res){
           if (err) {
+            self.handleClose()
           } else {
             var habit = JSON.parse(res.text)
             self.props.resetHabitState(habit)
