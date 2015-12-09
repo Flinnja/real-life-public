@@ -37,6 +37,10 @@ var HabitViewContainer = React.createClass({
 
   resetHabitState: function (habit) {
     this.setState( { habit: habit } )
+  },
+
+  resetTaskStatus: function (task) {
+    // tasks in props have to access the specific task and reset its state...
   }
 })
 

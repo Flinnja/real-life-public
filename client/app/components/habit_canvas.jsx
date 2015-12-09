@@ -14,6 +14,7 @@ var HabitCanvas = React.createClass({
       flexWrap: 'nowrap',
       justifyContent: 'flex-start',
       alignItems: 'flex-end'
+
     }
 
     return (
@@ -21,6 +22,25 @@ var HabitCanvas = React.createClass({
         { tasksGrid.map(this.renderTower) }
       </div>
     )
+  },
+
+  getTasksGrid: function () {
+    var tasksGrid = []
+    var towerArray = []
+
+    this.props.tasks.forEach(function (task) {
+      if (task.status == 'p') {
+        towerArray.push(task)
+      } else if (task.status == 'y') {
+        towerArray.push(task)
+      } else if (task.status == 'n') {
+        towerArray.push(task)
+        tasksGrid.push(towerArray)
+        towerArray = []
+      }
+    })
+    tasksGrid.push(towerArray)
+    return tasksGrid
   },
 
   renderTower: function (tasks) {
@@ -43,28 +63,21 @@ var HabitCanvas = React.createClass({
   renderBlock: function (task) {
     return (
       <div className="block">
-        <img src={`assets/${task.status}.png`}/>
+        <img onClick={this.blockToggle(task)} src={`assets/${task.status}.png`}/>
       </div>
     )
   },
 
-  getTasksGrid: function () {
-    var tasksGrid = []
-    var towerArray = []
-
-    this.props.tasks.forEach(function (task) {
+  blockToggle: function (task) {
+    return function(e) {
       if (task.status == 'p') {
-        towerArray.push(task)
+        task.status = 'y'
       } else if (task.status == 'y') {
-        towerArray.push(task)
-      } else if (task.status == 'n') {
-        towerArray.push(task)
-        tasksGrid.push(towerArray)
-        towerArray = []
+        task.status = 'n'
+      } else if (task.status ='n') {
+        task.status = 'p'
       }
-    })
-    tasksGrid.push(towerArray)
-    return tasksGrid
+    }
   }
 })
 
